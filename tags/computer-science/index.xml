@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Computer Science on Make it work, Make it right, Make it fast</title>
+    <link>http://herveDarritchon.github.io/tags/computer-science/</link>
+    <description>Recent content in Computer Science on Make it work, Make it right, Make it fast</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Fri, 15 May 2015 23:46:05 +0200</lastBuildDate>
+    <atom:link href="http://herveDarritchon.github.io/tags/computer-science/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>welcome</title>
+      <link>http://hervedarritchon.github.io/post/welcome/</link>
+      <pubDate>Fri, 15 May 2015 23:46:05 +0200</pubDate>
+      
+      <guid>http://hervedarritchon.github.io/post/welcome/</guid>
+      <description>&lt;p&gt;Hi everybody.&lt;/p&gt;
+
+&lt;p&gt;As a developper, I like to code, not a surprise and I don&amp;rsquo;t like much writing documentation. But above all I hate to do something I have already done. And specially if it&amp;rsquo;s to fix a bug  or to configure a tool I have already done.
+So when I can&amp;rsquo;t remember how I have fixed it, it&amp;rsquo;s getting worse.&lt;/p&gt;
+
+&lt;p&gt;I have decided to write a blog, just to share my experience, my problems and how I have fixed those.&lt;/p&gt;
+
+&lt;p&gt;At least, for me, it&amp;rsquo;s a way to solve a problem &amp;hellip; I&amp;rsquo;m getting old so I lost some of my memory ;) And more and more I forgot how I have fixed issues and I&amp;rsquo;m getting more and more angry.&lt;/p&gt;
+
+&lt;p&gt;This blog it&amp;rsquo;s a way to avoir going to the psychologue ;)&lt;/p&gt;
+
+&lt;p&gt;So welcome to this blog, my blog. I hope it will become your blog. I hope you will enjoy it as much as I have enjoyed writing it.&lt;/p&gt;
+
+&lt;p&gt;Hervé&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

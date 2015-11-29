@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Make it work, Make it right, Make it fast</title>
+    <link>http://herveDarritchon.github.io/</link>
+    <description>Recent content on Make it work, Make it right, Make it fast</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sun, 29 Nov 2015 20:41:37 +0100</lastBuildDate>
+    <atom:link href="http://herveDarritchon.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>initiation</title>
+      <link>http://hervedarritchon.github.io/docker/initiation/</link>
+      <pubDate>Sun, 29 Nov 2015 20:41:37 +0100</pubDate>
+      
+      <guid>http://hervedarritchon.github.io/docker/initiation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>boot2docker</title>
+      <link>http://hervedarritchon.github.io/docker/boot2docker/</link>
+      <pubDate>Fri, 24 Jul 2015 10:49:01 +0200</pubDate>
+      
+      <guid>http://hervedarritchon.github.io/docker/boot2docker/</guid>
+      <description>
+
+&lt;h1 id=&#34;boot2docker:85d322e546726e118a50e7d2a9647350&#34;&gt;Boot2docker&lt;/h1&gt;
+
+&lt;h2 id=&#34;derrière-un-proxy-d-entreprise:85d322e546726e118a50e7d2a9647350&#34;&gt;Derrière un proxy d&amp;rsquo;entreprise&lt;/h2&gt;
+
+&lt;h2 id=&#34;espace-disque:85d322e546726e118a50e7d2a9647350&#34;&gt;Espace Disque&lt;/h2&gt;
+
+&lt;p&gt;Il arrive parfois que l&amp;rsquo;on ait des problèmes d&amp;rsquo;espace disque au bout d&amp;rsquo;un certains temps d&amp;rsquo;utilisation.
+Pour cela, soit il faut faire du ménage, soit on peut aggrandir l&amp;rsquo;espace disque attribué à boot2docker&lt;/p&gt;
+
+&lt;h2 id=&#34;partage-de-répertoire-entre-container-et-hosts:85d322e546726e118a50e7d2a9647350&#34;&gt;Partage de répertoire entre container et hosts&lt;/h2&gt;
+
+&lt;p&gt;Utilisation de la commande Virtual Box pour créer un disque partagé.&lt;/p&gt;
+
+&lt;h2 id=&#34;boot2docker-et-vmware-fusion:85d322e546726e118a50e7d2a9647350&#34;&gt;Boot2docker et VMware Fusion&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>me</title>
+      <link>http://hervedarritchon.github.io/me/</link>
+      <pubDate>Sun, 07 Jun 2015 22:39:15 +0200</pubDate>
+      
+      <guid>http://hervedarritchon.github.io/me/</guid>
+      <description>&lt;p&gt;Hervé Darritchon is a software developper with a very good IT background and polyglote coding skills. He has nearly 20 years of experience in software engineering and works from the beginning in a french Telecom Operator.&lt;/p&gt;
+
+&lt;p&gt;Beginning its carrier in the mainframe (MVS), he has switched to the C/Unix delopping platform to finish has a software architecture on JEE stack.&lt;/p&gt;
+
+&lt;p&gt;Now he is working on making ReST services over the operator IT, he has great interest in Reactive applications and Scala language.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>welcome</title>
+      <link>http://hervedarritchon.github.io/post/welcome/</link>
+      <pubDate>Fri, 15 May 2015 23:46:05 +0200</pubDate>
+      
+      <guid>http://hervedarritchon.github.io/post/welcome/</guid>
+      <description>&lt;p&gt;Hi everybody.&lt;/p&gt;
+
+&lt;p&gt;As a developper, I like to code, not a surprise and I don&amp;rsquo;t like much writing documentation. But above all I hate to do something I have already done. And specially if it&amp;rsquo;s to fix a bug  or to configure a tool I have already done.
+So when I can&amp;rsquo;t remember how I have fixed it, it&amp;rsquo;s getting worse.&lt;/p&gt;
+
+&lt;p&gt;I have decided to write a blog, just to share my experience, my problems and how I have fixed those.&lt;/p&gt;
+
+&lt;p&gt;At least, for me, it&amp;rsquo;s a way to solve a problem &amp;hellip; I&amp;rsquo;m getting old so I lost some of my memory ;) And more and more I forgot how I have fixed issues and I&amp;rsquo;m getting more and more angry.&lt;/p&gt;
+
+&lt;p&gt;This blog it&amp;rsquo;s a way to avoir going to the psychologue ;)&lt;/p&gt;
+
+&lt;p&gt;So welcome to this blog, my blog. I hope it will become your blog. I hope you will enjoy it as much as I have enjoyed writing it.&lt;/p&gt;
+
+&lt;p&gt;Hervé&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

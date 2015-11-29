@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dockers on Make it work, Make it right, Make it fast</title>
+    <link>http://herveDarritchon.github.io/docker/</link>
+    <description>Recent content in Dockers on Make it work, Make it right, Make it fast</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sun, 29 Nov 2015 20:41:37 +0100</lastBuildDate>
+    <atom:link href="http://herveDarritchon.github.io/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>initiation</title>
+      <link>http://hervedarritchon.github.io/docker/initiation/</link>
+      <pubDate>Sun, 29 Nov 2015 20:41:37 +0100</pubDate>
+      
+      <guid>http://hervedarritchon.github.io/docker/initiation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>boot2docker</title>
+      <link>http://hervedarritchon.github.io/docker/boot2docker/</link>
+      <pubDate>Fri, 24 Jul 2015 10:49:01 +0200</pubDate>
+      
+      <guid>http://hervedarritchon.github.io/docker/boot2docker/</guid>
+      <description>
+
+&lt;h1 id=&#34;boot2docker:85d322e546726e118a50e7d2a9647350&#34;&gt;Boot2docker&lt;/h1&gt;
+
+&lt;h2 id=&#34;derrière-un-proxy-d-entreprise:85d322e546726e118a50e7d2a9647350&#34;&gt;Derrière un proxy d&amp;rsquo;entreprise&lt;/h2&gt;
+
+&lt;h2 id=&#34;espace-disque:85d322e546726e118a50e7d2a9647350&#34;&gt;Espace Disque&lt;/h2&gt;
+
+&lt;p&gt;Il arrive parfois que l&amp;rsquo;on ait des problèmes d&amp;rsquo;espace disque au bout d&amp;rsquo;un certains temps d&amp;rsquo;utilisation.
+Pour cela, soit il faut faire du ménage, soit on peut aggrandir l&amp;rsquo;espace disque attribué à boot2docker&lt;/p&gt;
+
+&lt;h2 id=&#34;partage-de-répertoire-entre-container-et-hosts:85d322e546726e118a50e7d2a9647350&#34;&gt;Partage de répertoire entre container et hosts&lt;/h2&gt;
+
+&lt;p&gt;Utilisation de la commande Virtual Box pour créer un disque partagé.&lt;/p&gt;
+
+&lt;h2 id=&#34;boot2docker-et-vmware-fusion:85d322e546726e118a50e7d2a9647350&#34;&gt;Boot2docker et VMware Fusion&lt;/h2&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
