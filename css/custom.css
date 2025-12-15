@@ -55,3 +55,18 @@ blockquote {
   font-size: 0.9rem;
   padding: 0.25rem 0.5rem;
 }
+
+.nav-brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.nav-brand-logo {
+  display: block;
+}
+
+.nav-brand-title {
+  line-height: 1;
+}
