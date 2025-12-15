@@ -3,6 +3,8 @@ body {
     background-image: url('/img/geometry2.png');
 }
 
+html { font-size: 18px; } /* essaye 17px si tu veux plus compact */
+
 /* anchors */
 a,
 a:visited {
@@ -25,7 +27,7 @@ blockquote {
 
 /* post list */
 .post-list {
-    font-size: 2em;
+    font-size: 1.75em;
 }
 
 .summary {
@@ -72,3 +74,29 @@ blockquote {
 .nav-brand-title {
     line-height: 1;
 }
+
+/* ====== Layout: plus large ====== */
+.container {
+    max-width: 1024px; /* 1140/1200/1280 -> choisis ton confort */
+}
+@media only screen and (max-width: 992px) {
+    .container { width: 92%; } /* au lieu de 85% */
+}
+
+.paper { padding: 1.5rem; }
+@media only screen and (max-width: 480px) {
+    .paper { padding: 1rem; }
+}
+
+h1 { font-size: 1.9rem; }
+h2 { font-size: 1.45rem; }
+h3 { font-size: 1.2rem; }
+h4 { font-size: 1.05rem; }
+h5 { font-size: 1.0rem; }
+h6 { font-size: 0.95rem; }
+
+h1,h2,h3,h4,h5,h6 { line-height: 1.15; }
+
+article .article-title { font-size: 1.9rem; line-height: 1.1; }
+
+article .text-lead { font-size: 1.15rem; margin: 1rem 0; }
