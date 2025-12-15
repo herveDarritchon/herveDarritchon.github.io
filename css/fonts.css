@@ -1,0 +1,17 @@
+/* Neucha */
+@font-face {
+  font-family: "Neucha";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/neucha/Neucha-Regular.woff2") format("woff2");
+}
+
+/* Patrick Hand SC */
+@font-face {
+  font-family: "Patrick Hand SC";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/patrick-hand-sc/PatrickHandSC-Regular.woff2") format("woff2");
+}
