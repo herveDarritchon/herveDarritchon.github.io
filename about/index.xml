@@ -1,1 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>My Dev part on HerDev Blog</title><link>https://herdev.hervedarritchon.fr/about/</link><description>Recent content in My Dev part on HerDev Blog</description><generator>Hugo</generator><language>fr-FR</language><lastBuildDate/><atom:link href="https://herdev.hervedarritchon.fr/about/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>My Dev part on HerDev Blog</title><link>https://herdev.hervedarritchon.fr/about/</link><description>Recent content in My Dev part on HerDev Blog</description><generator>Hugo</generator><language>fr-FR</language><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="https://herdev.hervedarritchon.fr/about/index.xml" rel="self" type="application/rss+xml"/><item><title>Licences</title><link>https://herdev.hervedarritchon.fr/about/license/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://herdev.hervedarritchon.fr/about/license/</guid><description>&lt;p&gt;Cette page explique clairement les licences applicables au contenu de ce blog (textes, images), aux extraits de code
+publiés dans les articles, au thème, et aux contenus tiers.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Disclaimer : je ne suis pas avocat. Ceci décrit mes choix et mon intention, pas un conseil juridique.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="résumé"&gt;Résumé&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Articles (texte)&lt;/strong&gt; : &lt;strong&gt;CC BY-NC-ND 4.0&lt;/strong&gt; &lt;em&gt;(Attribution • Pas d’usage commercial • Pas de modifications)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Images originales&lt;/strong&gt; : &lt;strong&gt;CC BY-NC-ND 4.0&lt;/strong&gt; (sauf mention contraire sous l’image)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Extraits de code dans les articles&lt;/strong&gt; : &lt;strong&gt;MIT&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Thème (code)&lt;/strong&gt; : &lt;strong&gt;MIT&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Contenus tiers&lt;/strong&gt; (logos, screenshots, polices, etc.) : &lt;strong&gt;leur licence&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="1-licence-du-contenu-éditorial-textes"&gt;1) Licence du contenu éditorial (textes)&lt;/h2&gt;
+&lt;p&gt;Sauf mention contraire, mes articles sont sous licence :&lt;/p&gt;</description></item></channel></rss>
