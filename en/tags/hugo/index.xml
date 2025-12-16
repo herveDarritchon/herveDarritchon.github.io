@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on HerDev Blog</title><link>https://herdev.hervedarritchon.fr/en/tags/hugo/</link><description>Recent content in Hugo on HerDev Blog</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Mon, 06 Dec 2021 14:48:33 +0100</lastBuildDate><atom:link href="https://herdev.hervedarritchon.fr/en/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Build your Hugo platform</title><link>https://herdev.hervedarritchon.fr/en/build-your-hugo-platform/</link><pubDate>Mon, 06 Dec 2021 14:48:33 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/en/build-your-hugo-platform/</guid><description>&lt;p&gt;Build your Hugo platform&lt;/p&gt;
+&lt;p&gt;This post explains a minimal, reproducible workflow to host a Hugo-based blog.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Write content in Markdown and keep it in a Git repository.&lt;/li&gt;
+&lt;li&gt;Use a CI pipeline (GitHub Actions, GitLab CI) or a simple publish step to generate the static site with Hugo.&lt;/li&gt;
+&lt;li&gt;Deploy the generated public site to a static host (GitHub Pages, Netlify, GitLab Pages, or an S3-compatible bucket).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Example workflow:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Edit Markdown files locally and commit to a branch.&lt;/li&gt;
+&lt;li&gt;On push, run a CI job that installs Hugo, runs &lt;code&gt;hugo&lt;/code&gt; and publishes the &lt;code&gt;public/&lt;/code&gt; folder to your hosting provider.&lt;/li&gt;
+&lt;li&gt;Use submodules or themes as git submodules if you want to track theme sources.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The objective is to keep the content and deployment process as code: Markdown + Git + automated publish. This makes the site easy to version, review, and reproduce.&lt;/p&gt;</description></item><item><title>Which platform to blog</title><link>https://herdev.hervedarritchon.fr/en/which-platform-to-blog/</link><pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate><guid>https://herdev.hervedarritchon.fr/en/which-platform-to-blog/</guid><description>&lt;p&gt;Shortly after deciding to blog, I needed to choose a platform. There are many free blogging platforms (e.g. blogger.com, medium.com), but I didn’t want to be locked into a hosted service. As a developer, I wanted the same workflow as my code: Markdown content versioned in Git and automated deployment.&lt;/p&gt;
+&lt;h2 id="why-hugo"&gt;Why Hugo&lt;/h2&gt;
+&lt;p&gt;I wanted something simple, fast to load, free, and without platform-injected content that could distract readers. I also wanted to write in Markdown and generate a static site from those files.&lt;/p&gt;</description></item></channel></rss>
