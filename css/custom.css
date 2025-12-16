@@ -100,3 +100,12 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.15; }
 article .article-title { font-size: 1.9rem; line-height: 1.1; }
 
 article .text-lead { font-size: 1.15rem; margin: 1rem 0; }
+
+.site-footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px dashed #c1c0bd;
+    font-size: 0.95rem;
+    text-align: center;
+}
+.site-footer p { margin: 0; }
