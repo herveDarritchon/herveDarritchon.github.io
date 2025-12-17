@@ -3,7 +3,11 @@ body {
     background-image: url('/img/geometry2.png');
 }
 
-html { font-size: 18px; } /* essaye 17px si tu veux plus compact */
+html {
+    font-size: 18px;
+}
+
+/* essaye 17px si tu veux plus compact */
 
 /* anchors */
 a,
@@ -13,7 +17,8 @@ a:visited {
     text-decoration: underline;
 }
 
-/* navbar */<
+/* navbar */
+<
 nav a,
 nav a:visited {
     color: #41403e;
@@ -79,27 +84,62 @@ blockquote {
 .container {
     max-width: 1024px; /* 1140/1200/1280 -> choisis ton confort */
 }
+
 @media only screen and (max-width: 992px) {
-    .container { width: 92%; } /* au lieu de 85% */
+    .container {
+        width: 92%;
+    }
+
+    /* au lieu de 85% */
 }
 
-.paper { padding: 1.5rem; }
+.paper {
+    padding: 1.5rem;
+}
+
 @media only screen and (max-width: 480px) {
-    .paper { padding: 1rem; }
+    .paper {
+        padding: 1rem;
+    }
 }
 
-h1 { font-size: 1.9rem; }
-h2 { font-size: 1.45rem; }
-h3 { font-size: 1.2rem; }
-h4 { font-size: 1.05rem; }
-h5 { font-size: 1.0rem; }
-h6 { font-size: 0.95rem; }
+h1 {
+    font-size: 1.9rem;
+}
 
-h1,h2,h3,h4,h5,h6 { line-height: 1.15; }
+h2 {
+    font-size: 1.45rem;
+}
 
-article .article-title { font-size: 1.9rem; line-height: 1.1; }
+h3 {
+    font-size: 1.2rem;
+}
 
-article .text-lead { font-size: 1.15rem; margin: 1rem 0; }
+h4 {
+    font-size: 1.05rem;
+}
+
+h5 {
+    font-size: 1.0rem;
+}
+
+h6 {
+    font-size: 0.95rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.15;
+}
+
+article .article-title {
+    font-size: 1.9rem;
+    line-height: 1.1;
+}
+
+article .text-lead {
+    font-size: 1.15rem;
+    margin: 1rem 0;
+}
 
 /*  ====== Footer ====== */
 .site-footer {
@@ -122,7 +162,7 @@ article .text-lead { font-size: 1.15rem; margin: 1rem 0; }
 .footer-license__img {
     height: 22px;
     width: auto;
-    border: 0;        /* évite le cadre PaperCSS sur img */
+    border: 0; /* évite le cadre PaperCSS sur img */
     border-radius: 0; /* idem */
     display: inline-block;
 }
@@ -135,7 +175,21 @@ article .text-lead { font-size: 1.15rem; margin: 1rem 0; }
     background-image: none; /* évite le surlignage PaperCSS si tu veux propre */
 }
 
-hr { margin: 2rem 0; opacity: .35; }
-.post-separator { margin: 2rem 0; opacity: .85; }
-.read-more { margin-top: .75rem; }
-.post-excerpt { padding: .25rem 0; }
+hr {
+    margin: 2rem 0;
+    opacity: .35;
+}
+
+.post-separator {
+    margin: 2rem 0;
+    opacity: .85;
+}
+
+.read-more {
+    margin-top: .75rem;
+    text-align: end;
+}
+
+.post-excerpt {
+    padding: .25rem 0;
+}
