@@ -1,11 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VS Code on HerDev Blog</title><link>https://herdev.hervedarritchon.fr/en/tutorials/vs-code/</link><description>Recent content in VS Code on HerDev Blog</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Mon, 15 Dec 2025 09:00:00 +0100</lastBuildDate><atom:link href="https://herdev.hervedarritchon.fr/en/tutorials/vs-code/index.xml" rel="self" type="application/rss+xml"/><item><title>VS Code : de l'éditeur + chat0 au poste de pilotage d'agents (et d'outils)</title><link>https://herdev.hervedarritchon.fr/en/d%C3%A9c-2025-vs-code-release-event/</link><pubDate>Mon, 15 Dec 2025 09:00:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/en/d%C3%A9c-2025-vs-code-release-event/</guid><description>&lt;h2 id="tldr"&gt;TL;DR&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VS Code on HerDev Blog</title><link>https://herdev.hervedarritchon.fr/en/tutorials/vs-code/</link><description>Recent content in VS Code on HerDev Blog</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Wed, 17 Dec 2025 15:03:19 +0000</lastBuildDate><atom:link href="https://herdev.hervedarritchon.fr/en/tutorials/vs-code/index.xml" rel="self" type="application/rss+xml"/><item><title>VS Code : de l'éditeur + chat0 au poste de pilotage d'agents (et d'outils)</title><link>https://herdev.hervedarritchon.fr/en/d%C3%A9c-2025-vs-code-release-event/</link><pubDate>Mon, 15 Dec 2025 09:00:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/en/d%C3%A9c-2025-vs-code-release-event/</guid><description>&lt;h2 id="tldr"&gt;TL;DR&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;VS Code chat is evolving into an orchestration console: recent sessions, archive, filters, and a dedicated agent sidebar.&lt;/li&gt;
+&lt;li&gt;VS Code chat is evolving into an orchestration console: recent sessions, archive, filters, and a dedicated agent
+sidebar.&lt;/li&gt;
 &lt;li&gt;Background and cloud agents become usable day-to-day thanks to isolation (Git worktrees) and smooth handoffs.&lt;/li&gt;
 &lt;li&gt;NES (Next Edit Suggestions) improves with rename/refactor detection via the language server.&lt;/li&gt;
 &lt;li&gt;&amp;ldquo;Bring Your Own Key&amp;rdquo; focuses on model choice and managing noise (hide, auto-select).&lt;/li&gt;
-&lt;li&gt;MCP reaches maturity: integrated registry, auto-start, downloadable resources, URL elicitation, tasks, sampling — the tools ecosystem is becoming structured.&lt;/li&gt;
+&lt;li&gt;MCP reaches maturity: integrated registry, auto-start, downloadable resources, URL elicitation, tasks, sampling — the
+tools ecosystem is becoming structured.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id="why-this-matters"&gt;Why this matters&lt;/h2&gt;
-&lt;p&gt;The recent release presented at a &amp;ldquo;VS Code release event&amp;rdquo; shows a shift: VS Code aims to be more than an editor with chat — it wants to be the cockpit where you run, track and combine agents, models and tools. The important change is the workflow: from &amp;ldquo;ask for code&amp;rdquo; to &amp;ldquo;delegate tasks, isolate work, review and merge&amp;rdquo;.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;The recent release presented at a &amp;ldquo;VS Code release event&amp;rdquo; shows a shift: VS Code aims to be more than an editor with
+chat — it wants to be the cockpit where you run, track and combine agents, models and tools. The important change is the
+workflow: from &amp;ldquo;ask for code&amp;rdquo; to &amp;ldquo;delegate tasks, isolate work, review and merge&amp;rdquo;.&lt;/p&gt;</description></item></channel></rss>
