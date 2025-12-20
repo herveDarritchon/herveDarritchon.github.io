@@ -189,3 +189,40 @@ hr {
     margin-top: .75rem;
     text-align: end;
 }
+
+/* Task lists Goldmark + thème "paper": enlever le marqueur "-" et aligner */
+main li:has(> input[type="checkbox"])::before {
+    content: none !important;
+}
+
+main li:has(> input[type="checkbox"]) {
+    display: flex;
+    gap: .6rem;
+    align-items: flex-start;
+}
+
+main li > input[type="checkbox"] {
+    margin-top: .2rem;
+    display: inline-block;
+}
+
+.paper-checklist .paper-check{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .5rem;
+    margin: .5rem 2rem;
+    line-height: 0.5rem;
+}
+
+.paper-checklist .paper-check input[type="checkbox"]{
+    flex: 0 0 auto;
+    margin: 0;           /* évite les décalages */
+    display: inline-block;
+}
+
+.paper-checklist .paper-check span{
+    flex: 1 1 auto;
+    display: inline;     /* au cas où PaperCSS le force en block */
+}
+

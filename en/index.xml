@@ -53,4 +53,11 @@ workflow: from &amp;ldquo;ask for code&amp;rdquo; to &amp;ldquo;delegate tasks, 
 &lt;h2 id="2-images-the-common-trap"&gt;2) Images: the common trap&lt;/h2&gt;
 &lt;p&gt;Not all images are equal.&lt;/p&gt;</description></item><item><title>Which platform to blog</title><link>https://herdev.hervedarritchon.fr/en/which-platform-to-blog/</link><pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate><guid>https://herdev.hervedarritchon.fr/en/which-platform-to-blog/</guid><description>&lt;p&gt;Shortly after deciding to blog, I needed to choose a platform. There are many free blogging platforms (e.g. blogger.com, medium.com), but I didn’t want to be locked into a hosted service. As a developer, I wanted the same workflow as my code: Markdown content versioned in Git and automated deployment.&lt;/p&gt;
 &lt;h2 id="why-hugo"&gt;Why Hugo&lt;/h2&gt;
-&lt;p&gt;I wanted something simple, fast to load, free, and without platform-injected content that could distract readers. I also wanted to write in Markdown and generate a static site from those files.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;I wanted something simple, fast to load, free, and without platform-injected content that could distract readers. I also wanted to write in Markdown and generate a static site from those files.&lt;/p&gt;</description></item><item><title>Spring Boot + Kotlin : NoClassDefFoundError: jakarta/servlet/Filter (root cause + fix)</title><link>https://herdev.hervedarritchon.fr/en/kotlin-spring-no-default-package/</link><pubDate>Sat, 20 Dec 2025 19:10:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/en/kotlin-spring-no-default-package/</guid><description>&lt;h2 id="tldr-fix-it-in-60-seconds"&gt;TL;DR (fix it in 60 seconds)&lt;/h2&gt;
+&lt;p&gt;If you see:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;** WARNING ** : Your ApplicationContext is unlikely to start due to a @ComponentScan of the default package.&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;then &lt;code&gt;NoClassDefFoundError: jakarta/servlet/Filter&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;➡️ Verdict: &lt;strong&gt;your &lt;code&gt;@SpringBootApplication&lt;/code&gt; class is in the &lt;em&gt;default package&lt;/em&gt; (no &lt;code&gt;package ...&lt;/code&gt;).&lt;/strong&gt;&lt;br&gt;
+➡️ Fix: &lt;strong&gt;declare a real root package + move the file into the matching folder&lt;/strong&gt; (and align your tests).&lt;/p&gt;</description></item></channel></rss>

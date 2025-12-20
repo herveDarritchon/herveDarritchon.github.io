@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spring Boot on HerDev Blog</title><link>https://herdev.hervedarritchon.fr/tags/spring-boot/</link><description>Recent content in Spring Boot on HerDev Blog</description><generator>Hugo</generator><language>fr-FR</language><lastBuildDate>Sat, 20 Dec 2025 22:40:05 +0100</lastBuildDate><atom:link href="https://herdev.hervedarritchon.fr/tags/spring-boot/index.xml" rel="self" type="application/rss+xml"/><item><title>NoClassDefFoundError: jakarta/servlet/Filter (root cause + fix)</title><link>https://herdev.hervedarritchon.fr/kotlin-spring-no-default-package/</link><pubDate>Sat, 20 Dec 2025 19:10:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/kotlin-spring-no-default-package/</guid><description>&lt;h2 id="tldr-répare-en-60-secondes"&gt;TL;DR (répare en 60 secondes)&lt;/h2&gt;
+&lt;p&gt;Si tu vois :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;** WARNING ** : Your ApplicationContext is unlikely to start due to a @ComponentScan of the default package.&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;puis &lt;code&gt;NoClassDefFoundError: jakarta/servlet/Filter&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;➡️ Verdict : &lt;strong&gt;ta classe &lt;code&gt;@SpringBootApplication&lt;/code&gt; est dans le &lt;em&gt;default package&lt;/em&gt; (pas de &lt;code&gt;package ...&lt;/code&gt;).&lt;/strong&gt;&lt;br&gt;
+➡️ Fix : &lt;strong&gt;déclare un vrai package + place le fichier dans le dossier qui correspond&lt;/strong&gt; (et aligne tes tests).&lt;/p&gt;</description></item></channel></rss>
