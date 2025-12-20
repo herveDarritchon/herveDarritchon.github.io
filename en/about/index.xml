@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>About (Engineering) on HerDev Blog</title><link>https://herdev.hervedarritchon.fr/en/about/</link><description>Recent content in About (Engineering) on HerDev Blog</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Tue, 16 Dec 2025 13:55:00 +0100</lastBuildDate><atom:link href="https://herdev.hervedarritchon.fr/en/about/index.xml" rel="self" type="application/rss+xml"/><item><title>Licensing</title><link>https://herdev.hervedarritchon.fr/en/about/license/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://herdev.hervedarritchon.fr/en/about/license/</guid><description>&lt;p&gt;Use this page to clearly state licensing for blog posts (text), images, code snippets, the theme, and third-party assets.&lt;/p&gt;
-&lt;h2 id="summary"&gt;Summary&lt;/h2&gt;
+&lt;h2 id="summary"&gt;
+Summary
+&lt;a class="heading-anchor" href="#summary" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Blog posts (text)&lt;/strong&gt;: &lt;strong&gt;CC BY-NC-ND 4.0&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Original images&lt;/strong&gt;: &lt;strong&gt;CC BY-NC-ND 4.0&lt;/strong&gt; (unless stated otherwise)&lt;/li&gt;
@@ -7,21 +10,8 @@
 &lt;li&gt;&lt;strong&gt;Theme (code)&lt;/strong&gt;: &lt;strong&gt;MIT&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Third-party assets&lt;/strong&gt;: their own licenses&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="1-editorial-content-text"&gt;1) Editorial content (text)&lt;/h2&gt;
-&lt;p&gt;Unless stated otherwise, my articles are licensed under:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id="you-may"&gt;You may&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;share links to posts;&lt;/li&gt;
-&lt;li&gt;quote &lt;strong&gt;short excerpts&lt;/strong&gt; with proper attribution;&lt;/li&gt;
-&lt;li&gt;redistribute the post &lt;strong&gt;as-is&lt;/strong&gt; (no modifications), with attribution, non-commercially.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="you-may-not-without-permission"&gt;You may not (without permission)&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;republish modified versions (even small edits);&lt;/li&gt;
-&lt;li&gt;publish translations (a translation is a derivative work);&lt;/li&gt;
-&lt;li&gt;publish rewritten summaries elsewhere;&lt;/li&gt;
-&lt;li&gt;use the content commercially (paid products, premium newsletters, paid trainings, etc.).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="2-images-the-common-trap"&gt;2) Images: the common trap&lt;/h2&gt;
-&lt;p&gt;Not all images are equal.&lt;/p&gt;</description></item></channel></rss>
+&lt;h2 id="1-editorial-content-text"&gt;
+1) Editorial content (text)
+&lt;a class="heading-anchor" href="#1-editorial-content-text" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Unless stated otherwise, my articles are licensed under:&lt;/p&gt;</description></item></channel></rss>

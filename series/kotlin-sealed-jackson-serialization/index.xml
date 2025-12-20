@@ -8,5 +8,8 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;./gradlew test
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="tldr"&gt;TL;DR&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="tldr"&gt;
+TL;DR
+&lt;a class="heading-anchor" href="#tldr" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
 &lt;p&gt;Jackson ne gère pas nativement la (dé)sérialisation polymorphe des sealed classes Kotlin. Sans configuration adaptée, la désérialisation échoue ou perd le sous-type. Ce guide explique pourquoi, comment le reproduire, et propose des solutions rapides (module Kotlin, annotations, registration manuelle) ainsi qu’une alternative architecturale (séparer DTO/domain). Tests fournis pour valider chaque approche.&lt;/p&gt;</description></item></channel></rss>

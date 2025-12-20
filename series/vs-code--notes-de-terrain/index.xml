@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VS Code — Notes De Terrain on HerDev Blog</title><link>https://herdev.hervedarritchon.fr/series/vs-code--notes-de-terrain/</link><description>Recent content in VS Code — Notes De Terrain on HerDev Blog</description><generator>Hugo</generator><language>fr-FR</language><lastBuildDate>Sat, 20 Dec 2025 22:16:52 +0000</lastBuildDate><atom:link href="https://herdev.hervedarritchon.fr/series/vs-code--notes-de-terrain/index.xml" rel="self" type="application/rss+xml"/><item><title>VS Code : de l'éditeur + chat… au poste de pilotage d'agents (et d'outils)</title><link>https://herdev.hervedarritchon.fr/d%C3%A9c-2025-vs-code-release-event/</link><pubDate>Mon, 15 Dec 2025 09:00:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/d%C3%A9c-2025-vs-code-release-event/</guid><description>&lt;h2 id="tldr"&gt;TL;DR&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VS Code — Notes De Terrain on HerDev Blog</title><link>https://herdev.hervedarritchon.fr/series/vs-code--notes-de-terrain/</link><description>Recent content in VS Code — Notes De Terrain on HerDev Blog</description><generator>Hugo</generator><language>fr-FR</language><lastBuildDate>Sat, 20 Dec 2025 22:29:45 +0000</lastBuildDate><atom:link href="https://herdev.hervedarritchon.fr/series/vs-code--notes-de-terrain/index.xml" rel="self" type="application/rss+xml"/><item><title>VS Code : de l'éditeur + chat… au poste de pilotage d'agents (et d'outils)</title><link>https://herdev.hervedarritchon.fr/d%C3%A9c-2025-vs-code-release-event/</link><pubDate>Mon, 15 Dec 2025 09:00:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/d%C3%A9c-2025-vs-code-release-event/</guid><description>&lt;h2 id="tldr"&gt;
+TL;DR
+&lt;a class="heading-anchor" href="#tldr" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Le chat de VS Code devient une &lt;strong&gt;console d’orchestration&lt;/strong&gt; : sessions récentes, archive, filtres, sidebar dédiée.&lt;/li&gt;
 &lt;li&gt;Les agents “background” et “cloud” deviennent &lt;strong&gt;utilisables au quotidien&lt;/strong&gt; grâce à l’isolation (Git worktrees) et au handoff fluide.&lt;/li&gt;
@@ -7,6 +10,9 @@
 &lt;li&gt;MCP passe un cap : &lt;strong&gt;registry intégré&lt;/strong&gt;, démarrage auto, resources téléchargeables, URL elicitation, tasks, sampling… bref, l’écosystème outils se structure.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h2 id="pourquoi-jen-parle"&gt;Pourquoi j’en parle&lt;/h2&gt;
+&lt;h2 id="pourquoi-jen-parle"&gt;
+Pourquoi j’en parle
+&lt;a class="heading-anchor" href="#pourquoi-jen-parle" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
 &lt;p&gt;La dernière release de l’année a été présentée lors d’un live “VS Code release event”, avec un message assez clair : VS Code ne veut plus être “un éditeur avec un chat”, mais &lt;strong&gt;le cockpit où tu lances, suis et combines des agents, des modèles et des outils&lt;/strong&gt;. Et oui, la release venait juste d’être livrée la veille du live.&lt;/p&gt;
 &lt;p&gt;Ce qui m’intéresse ici, ce n’est pas l’effet waouh. C’est le changement de &lt;strong&gt;workflow&lt;/strong&gt; : quand tu passes de “je demande un bout de code” à “je délègue des tâches, j’isole, je review, je merge”.&lt;/p&gt;</description></item></channel></rss>

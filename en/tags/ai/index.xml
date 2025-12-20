@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI on HerDev Blog</title><link>https://herdev.hervedarritchon.fr/en/tags/ai/</link><description>Recent content in AI on HerDev Blog</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Sat, 20 Dec 2025 22:16:52 +0000</lastBuildDate><atom:link href="https://herdev.hervedarritchon.fr/en/tags/ai/index.xml" rel="self" type="application/rss+xml"/><item><title>VS Code : de l'éditeur + chat0 au poste de pilotage d'agents (et d'outils)</title><link>https://herdev.hervedarritchon.fr/en/d%C3%A9c-2025-vs-code-release-event/</link><pubDate>Mon, 15 Dec 2025 09:00:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/en/d%C3%A9c-2025-vs-code-release-event/</guid><description>&lt;h2 id="tldr"&gt;TL;DR&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI on HerDev Blog</title><link>https://herdev.hervedarritchon.fr/en/tags/ai/</link><description>Recent content in AI on HerDev Blog</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Sat, 20 Dec 2025 22:29:45 +0000</lastBuildDate><atom:link href="https://herdev.hervedarritchon.fr/en/tags/ai/index.xml" rel="self" type="application/rss+xml"/><item><title>VS Code : de l'éditeur + chat0 au poste de pilotage d'agents (et d'outils)</title><link>https://herdev.hervedarritchon.fr/en/d%C3%A9c-2025-vs-code-release-event/</link><pubDate>Mon, 15 Dec 2025 09:00:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/en/d%C3%A9c-2025-vs-code-release-event/</guid><description>&lt;h2 id="tldr"&gt;
+TL;DR
+&lt;a class="heading-anchor" href="#tldr" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;VS Code chat is evolving into an orchestration console: recent sessions, archive, filters, and a dedicated agent
 sidebar.&lt;/li&gt;
@@ -9,7 +12,10 @@ sidebar.&lt;/li&gt;
 tools ecosystem is becoming structured.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h2 id="why-this-matters"&gt;Why this matters&lt;/h2&gt;
+&lt;h2 id="why-this-matters"&gt;
+Why this matters
+&lt;a class="heading-anchor" href="#why-this-matters" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
 &lt;p&gt;The recent release presented at a &amp;ldquo;VS Code release event&amp;rdquo; shows a shift: VS Code aims to be more than an editor with
 chat — it wants to be the cockpit where you run, track and combine agents, models and tools. The important change is the
 workflow: from &amp;ldquo;ask for code&amp;rdquo; to &amp;ldquo;delegate tasks, isolate work, review and merge&amp;rdquo;.&lt;/p&gt;</description></item></channel></rss>

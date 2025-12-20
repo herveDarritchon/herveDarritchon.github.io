@@ -12,5 +12,8 @@
 &lt;li&gt;Use submodules or themes as git submodules if you want to track theme sources.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;The objective is to keep the content and deployment process as code: Markdown + Git + automated publish. This makes the site easy to version, review, and reproduce.&lt;/p&gt;</description></item><item><title>Which platform to blog</title><link>https://herdev.hervedarritchon.fr/en/which-platform-to-blog/</link><pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate><guid>https://herdev.hervedarritchon.fr/en/which-platform-to-blog/</guid><description>&lt;p&gt;Shortly after deciding to blog, I needed to choose a platform. There are many free blogging platforms (e.g. blogger.com, medium.com), but I didn’t want to be locked into a hosted service. As a developer, I wanted the same workflow as my code: Markdown content versioned in Git and automated deployment.&lt;/p&gt;
-&lt;h2 id="why-hugo"&gt;Why Hugo&lt;/h2&gt;
+&lt;h2 id="why-hugo"&gt;
+Why Hugo
+&lt;a class="heading-anchor" href="#why-hugo" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
 &lt;p&gt;I wanted something simple, fast to load, free, and without platform-injected content that could distract readers. I also wanted to write in Markdown and generate a static site from those files.&lt;/p&gt;</description></item></channel></rss>

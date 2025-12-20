@@ -11,7 +11,10 @@
 &lt;li&gt;On push, run a CI job that installs Hugo, runs &lt;code&gt;hugo&lt;/code&gt; and publishes the &lt;code&gt;public/&lt;/code&gt; folder to your hosting provider.&lt;/li&gt;
 &lt;li&gt;Use submodules or themes as git submodules if you want to track theme sources.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;The objective is to keep the content and deployment process as code: Markdown + Git + automated publish. This makes the site easy to version, review, and reproduce.&lt;/p&gt;</description></item><item><title>VS Code : de l'éditeur + chat0 au poste de pilotage d'agents (et d'outils)</title><link>https://herdev.hervedarritchon.fr/en/d%C3%A9c-2025-vs-code-release-event/</link><pubDate>Mon, 15 Dec 2025 09:00:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/en/d%C3%A9c-2025-vs-code-release-event/</guid><description>&lt;h2 id="tldr"&gt;TL;DR&lt;/h2&gt;
+&lt;p&gt;The objective is to keep the content and deployment process as code: Markdown + Git + automated publish. This makes the site easy to version, review, and reproduce.&lt;/p&gt;</description></item><item><title>VS Code : de l'éditeur + chat0 au poste de pilotage d'agents (et d'outils)</title><link>https://herdev.hervedarritchon.fr/en/d%C3%A9c-2025-vs-code-release-event/</link><pubDate>Mon, 15 Dec 2025 09:00:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/en/d%C3%A9c-2025-vs-code-release-event/</guid><description>&lt;h2 id="tldr"&gt;
+TL;DR
+&lt;a class="heading-anchor" href="#tldr" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;VS Code chat is evolving into an orchestration console: recent sessions, archive, filters, and a dedicated agent
 sidebar.&lt;/li&gt;
@@ -22,11 +25,17 @@ sidebar.&lt;/li&gt;
 tools ecosystem is becoming structured.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h2 id="why-this-matters"&gt;Why this matters&lt;/h2&gt;
+&lt;h2 id="why-this-matters"&gt;
+Why this matters
+&lt;a class="heading-anchor" href="#why-this-matters" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
 &lt;p&gt;The recent release presented at a &amp;ldquo;VS Code release event&amp;rdquo; shows a shift: VS Code aims to be more than an editor with
 chat — it wants to be the cockpit where you run, track and combine agents, models and tools. The important change is the
 workflow: from &amp;ldquo;ask for code&amp;rdquo; to &amp;ldquo;delegate tasks, isolate work, review and merge&amp;rdquo;.&lt;/p&gt;</description></item><item><title>Licensing</title><link>https://herdev.hervedarritchon.fr/en/about/license/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://herdev.hervedarritchon.fr/en/about/license/</guid><description>&lt;p&gt;Use this page to clearly state licensing for blog posts (text), images, code snippets, the theme, and third-party assets.&lt;/p&gt;
-&lt;h2 id="summary"&gt;Summary&lt;/h2&gt;
+&lt;h2 id="summary"&gt;
+Summary
+&lt;a class="heading-anchor" href="#summary" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Blog posts (text)&lt;/strong&gt;: &lt;strong&gt;CC BY-NC-ND 4.0&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Original images&lt;/strong&gt;: &lt;strong&gt;CC BY-NC-ND 4.0&lt;/strong&gt; (unless stated otherwise)&lt;/li&gt;
@@ -34,26 +43,19 @@ workflow: from &amp;ldquo;ask for code&amp;rdquo; to &amp;ldquo;delegate tasks, 
 &lt;li&gt;&lt;strong&gt;Theme (code)&lt;/strong&gt;: &lt;strong&gt;MIT&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Third-party assets&lt;/strong&gt;: their own licenses&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="1-editorial-content-text"&gt;1) Editorial content (text)&lt;/h2&gt;
-&lt;p&gt;Unless stated otherwise, my articles are licensed under:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id="you-may"&gt;You may&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;share links to posts;&lt;/li&gt;
-&lt;li&gt;quote &lt;strong&gt;short excerpts&lt;/strong&gt; with proper attribution;&lt;/li&gt;
-&lt;li&gt;redistribute the post &lt;strong&gt;as-is&lt;/strong&gt; (no modifications), with attribution, non-commercially.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="you-may-not-without-permission"&gt;You may not (without permission)&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;republish modified versions (even small edits);&lt;/li&gt;
-&lt;li&gt;publish translations (a translation is a derivative work);&lt;/li&gt;
-&lt;li&gt;publish rewritten summaries elsewhere;&lt;/li&gt;
-&lt;li&gt;use the content commercially (paid products, premium newsletters, paid trainings, etc.).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="2-images-the-common-trap"&gt;2) Images: the common trap&lt;/h2&gt;
-&lt;p&gt;Not all images are equal.&lt;/p&gt;</description></item><item><title>Which platform to blog</title><link>https://herdev.hervedarritchon.fr/en/which-platform-to-blog/</link><pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate><guid>https://herdev.hervedarritchon.fr/en/which-platform-to-blog/</guid><description>&lt;p&gt;Shortly after deciding to blog, I needed to choose a platform. There are many free blogging platforms (e.g. blogger.com, medium.com), but I didn’t want to be locked into a hosted service. As a developer, I wanted the same workflow as my code: Markdown content versioned in Git and automated deployment.&lt;/p&gt;
-&lt;h2 id="why-hugo"&gt;Why Hugo&lt;/h2&gt;
-&lt;p&gt;I wanted something simple, fast to load, free, and without platform-injected content that could distract readers. I also wanted to write in Markdown and generate a static site from those files.&lt;/p&gt;</description></item><item><title>Spring Boot + Kotlin : NoClassDefFoundError: jakarta/servlet/Filter (root cause + fix)</title><link>https://herdev.hervedarritchon.fr/en/kotlin-spring-no-default-package/</link><pubDate>Sat, 20 Dec 2025 19:10:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/en/kotlin-spring-no-default-package/</guid><description>&lt;h2 id="tldr-fix-it-in-60-seconds"&gt;TL;DR (fix it in 60 seconds)&lt;/h2&gt;
+&lt;h2 id="1-editorial-content-text"&gt;
+1) Editorial content (text)
+&lt;a class="heading-anchor" href="#1-editorial-content-text" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Unless stated otherwise, my articles are licensed under:&lt;/p&gt;</description></item><item><title>Which platform to blog</title><link>https://herdev.hervedarritchon.fr/en/which-platform-to-blog/</link><pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate><guid>https://herdev.hervedarritchon.fr/en/which-platform-to-blog/</guid><description>&lt;p&gt;Shortly after deciding to blog, I needed to choose a platform. There are many free blogging platforms (e.g. blogger.com, medium.com), but I didn’t want to be locked into a hosted service. As a developer, I wanted the same workflow as my code: Markdown content versioned in Git and automated deployment.&lt;/p&gt;
+&lt;h2 id="why-hugo"&gt;
+Why Hugo
+&lt;a class="heading-anchor" href="#why-hugo" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;I wanted something simple, fast to load, free, and without platform-injected content that could distract readers. I also wanted to write in Markdown and generate a static site from those files.&lt;/p&gt;</description></item><item><title>Spring Boot + Kotlin : NoClassDefFoundError: jakarta/servlet/Filter (root cause + fix)</title><link>https://herdev.hervedarritchon.fr/en/kotlin-spring-no-default-package/</link><pubDate>Sat, 20 Dec 2025 19:10:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/en/kotlin-spring-no-default-package/</guid><description>&lt;h2 id="tldr-fix-it-in-60-seconds"&gt;
+TL;DR (fix it in 60 seconds)
+&lt;a class="heading-anchor" href="#tldr-fix-it-in-60-seconds" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
 &lt;p&gt;If you see:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;** WARNING ** : Your ApplicationContext is unlikely to start due to a @ComponentScan of the default package.&lt;/code&gt;&lt;/li&gt;

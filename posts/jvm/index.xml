@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>JVM on HerDev Blog</title><link>https://herdev.hervedarritchon.fr/posts/jvm/</link><description>Recent content in JVM on HerDev Blog</description><generator>Hugo</generator><language>fr-FR</language><atom:link href="https://herdev.hervedarritchon.fr/posts/jvm/index.xml" rel="self" type="application/rss+xml"/><item><title>NoClassDefFoundError: jakarta/servlet/Filter (root cause + fix)</title><link>https://herdev.hervedarritchon.fr/kotlin-spring-no-default-package/</link><pubDate>Sat, 20 Dec 2025 19:10:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/kotlin-spring-no-default-package/</guid><description>&lt;h2 id="tldr-répare-en-60-secondes"&gt;TL;DR (répare en 60 secondes)&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>JVM on HerDev Blog</title><link>https://herdev.hervedarritchon.fr/posts/jvm/</link><description>Recent content in JVM on HerDev Blog</description><generator>Hugo</generator><language>fr-FR</language><atom:link href="https://herdev.hervedarritchon.fr/posts/jvm/index.xml" rel="self" type="application/rss+xml"/><item><title>NoClassDefFoundError: jakarta/servlet/Filter (root cause + fix)</title><link>https://herdev.hervedarritchon.fr/kotlin-spring-no-default-package/</link><pubDate>Sat, 20 Dec 2025 19:10:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/kotlin-spring-no-default-package/</guid><description>&lt;h2 id="tldr-répare-en-60-secondes"&gt;
+TL;DR (répare en 60 secondes)
+&lt;a class="heading-anchor" href="#tldr-r%c3%a9pare-en-60-secondes" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
 &lt;p&gt;Si tu vois :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;** WARNING ** : Your ApplicationContext is unlikely to start due to a @ComponentScan of the default package.&lt;/code&gt;&lt;/li&gt;
@@ -15,5 +18,8 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;./gradlew test
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="tldr"&gt;TL;DR&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="tldr"&gt;
+TL;DR
+&lt;a class="heading-anchor" href="#tldr" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
 &lt;p&gt;Jackson ne gère pas nativement la (dé)sérialisation polymorphe des sealed classes Kotlin. Sans configuration adaptée, la désérialisation échoue ou perd le sous-type. Ce guide explique pourquoi, comment le reproduire, et propose des solutions rapides (module Kotlin, annotations, registration manuelle) ainsi qu’une alternative architecturale (séparer DTO/domain). Tests fournis pour valider chaque approche.&lt;/p&gt;</description></item></channel></rss>
