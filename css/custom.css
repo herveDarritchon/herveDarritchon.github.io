@@ -247,3 +247,42 @@ h6:hover .heading-anchor {
 .heading-link:hover {
     text-decoration: underline;
 }
+
+.post-feedback {
+    margin-top: 2rem;
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ligne "Utile ?" + widget */
+.post-feedback__vote {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+/* évite que le widget colle à gauche */
+.post-feedback__voteWidget {
+    display: flex;
+    align-items: center;
+}
+
+/* bouton pleine largeur dans le footer */
+.post-feedback__footer .paper-btn,
+.post-feedback__footer a.paper-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.post-feedback__issue {
+    margin-top: 1rem;
+}
+.post-feedback__issue .paper-btn,
+.post-feedback__issue a.paper-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
