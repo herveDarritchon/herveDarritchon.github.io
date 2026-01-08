@@ -286,3 +286,11 @@ h6:hover .heading-anchor {
     width: 100%;
     text-align: center;
 }
+
+.codeblock { position: relative; }
+.codeblock__copy {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    font-size: .85rem;
+}

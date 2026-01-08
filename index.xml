@@ -35,7 +35,21 @@ Résumé
 1) Licence du contenu éditorial (textes)
 &lt;a class="heading-anchor" href="#1-licence-du-contenu-%c3%a9ditorial-textes" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Sauf mention contraire, mes articles sont sous licence :&lt;/p&gt;</description></item><item><title>Which platform to blog</title><link>https://herdev.hervedarritchon.fr/which-platform-to-blog/</link><pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate><guid>https://herdev.hervedarritchon.fr/which-platform-to-blog/</guid><description>&lt;p&gt;Quickly after deciding to &lt;em&gt;&lt;strong&gt;Blog&lt;/strong&gt;&lt;/em&gt;, I needed to choose my platform. I have found quite a lot of blogging platforms free on Internet (&lt;a href="https://www.blogger.com/"&gt;blogger.com&lt;/a&gt;, &lt;a href="https://medium.com/"&gt;medium.com&lt;/a&gt;, &amp;hellip;). But I didn&amp;rsquo;t want to be locked down to one platform and as a developper I wanted to have the same process as coding. So I shorty felt the need to have something simple, something very similar to my day to day job, it&amp;rsquo;s why I chose to do my content in markdown and to deploy it as I push code to a git repo.&lt;/p&gt;</description></item><item><title>NoClassDefFoundError: jakarta/servlet/Filter (root cause + fix)</title><link>https://herdev.hervedarritchon.fr/kotlin-spring-no-default-package/</link><pubDate>Sat, 20 Dec 2025 19:10:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/kotlin-spring-no-default-package/</guid><description>&lt;h2 id="tldr-répare-en-60-secondes"&gt;
+&lt;p&gt;Sauf mention contraire, mes articles sont sous licence :&lt;/p&gt;</description></item><item><title>Which platform to blog</title><link>https://herdev.hervedarritchon.fr/which-platform-to-blog/</link><pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate><guid>https://herdev.hervedarritchon.fr/which-platform-to-blog/</guid><description>&lt;p&gt;Quickly after deciding to &lt;em&gt;&lt;strong&gt;Blog&lt;/strong&gt;&lt;/em&gt;, I needed to choose my platform. I have found quite a lot of blogging platforms free on Internet (&lt;a href="https://www.blogger.com/"&gt;blogger.com&lt;/a&gt;, &lt;a href="https://medium.com/"&gt;medium.com&lt;/a&gt;, &amp;hellip;). But I didn&amp;rsquo;t want to be locked down to one platform and as a developper I wanted to have the same process as coding. So I shorty felt the need to have something simple, something very similar to my day to day job, it&amp;rsquo;s why I chose to do my content in markdown and to deploy it as I push code to a git repo.&lt;/p&gt;</description></item><item><title>AI &amp; Java : passer des prompts au logiciel (vraiment) – mémoire, outils, JSON et Quarkus</title><link>https://herdev.hervedarritchon.fr/ai-java-passer-des-prompts-au-logiciel/</link><pubDate>Tue, 06 Jan 2026 00:00:00 +0000</pubDate><guid>https://herdev.hervedarritchon.fr/ai-java-passer-des-prompts-au-logiciel/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;Inspiré de la conf vJUG CONNECT “AI &amp;amp; Java: From Structured Prompts to Smarter Apps” (&lt;a href="https://www.youtube.com/watch?v=8l1obGG_6jQ"&gt;YouTube&lt;/a&gt;).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="tldr"&gt;
+TL;DR
+&lt;a class="heading-anchor" href="#tldr" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Si tu retiens une seule idée : &lt;strong&gt;le “prompt engineering” n’est pas le sujet&lt;/strong&gt;. Le sujet, c’est &lt;strong&gt;l’ingénierie du contexte&lt;/strong&gt; et &lt;strong&gt;du contrat&lt;/strong&gt; entre ton code et le modèle :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;mémoire&lt;/strong&gt; (court/long terme, cohérence, conflits),&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;outils&lt;/strong&gt; (fonctions appelables par le LLM),&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;sorties structurées&lt;/strong&gt; (JSON/records/enums au lieu de texte libre),&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;observabilité + timeouts + fallbacks&lt;/strong&gt; (parce que “ça marche en démo” ne vaut rien en prod).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;La conf le dit sans détour : ce n’est pas de la magie, c’est du logiciel.&lt;/p&gt;</description></item><item><title>NoClassDefFoundError: jakarta/servlet/Filter (root cause + fix)</title><link>https://herdev.hervedarritchon.fr/kotlin-spring-no-default-package/</link><pubDate>Sat, 20 Dec 2025 19:10:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/kotlin-spring-no-default-package/</guid><description>&lt;h2 id="tldr-répare-en-60-secondes"&gt;
 TL;DR (répare en 60 secondes)
 &lt;a class="heading-anchor" href="#tldr-r%c3%a9pare-en-60-secondes" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
 &lt;/h2&gt;
@@ -54,8 +68,9 @@ TL;DR (répare en 60 secondes)
 &lt;li&gt;&lt;strong&gt;Commande&lt;/strong&gt; :&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;./gradlew test
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="tldr"&gt;
+&lt;div class="codeblock"&gt;
+ &lt;button class="codeblock__copy" type="button" aria-label="Copy code"&gt;Copy&lt;/button&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;./gradlew test&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id="tldr"&gt;
 TL;DR
 &lt;a class="heading-anchor" href="#tldr" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
 &lt;/h2&gt;

@@ -52,7 +52,21 @@ Summary
 Why Hugo
 &lt;a class="heading-anchor" href="#why-hugo" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;I wanted something simple, fast to load, free, and without platform-injected content that could distract readers. I also wanted to write in Markdown and generate a static site from those files.&lt;/p&gt;</description></item><item><title>Spring Boot + Kotlin : NoClassDefFoundError: jakarta/servlet/Filter (root cause + fix)</title><link>https://herdev.hervedarritchon.fr/en/kotlin-spring-no-default-package/</link><pubDate>Sat, 20 Dec 2025 19:10:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/en/kotlin-spring-no-default-package/</guid><description>&lt;h2 id="tldr-fix-it-in-60-seconds"&gt;
+&lt;p&gt;I wanted something simple, fast to load, free, and without platform-injected content that could distract readers. I also wanted to write in Markdown and generate a static site from those files.&lt;/p&gt;</description></item><item><title>AI &amp; Java : passer des prompts au logiciel (vraiment) – mémoire, outils, JSON et Quarkus</title><link>https://herdev.hervedarritchon.fr/en/ai-java-passer-des-prompts-au-logiciel/</link><pubDate>Tue, 06 Jan 2026 00:00:00 +0000</pubDate><guid>https://herdev.hervedarritchon.fr/en/ai-java-passer-des-prompts-au-logiciel/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;Inspiré de la conf vJUG CONNECT “AI &amp;amp; Java: From Structured Prompts to Smarter Apps” (&lt;a href="https://www.youtube.com/watch?v=8l1obGG_6jQ"&gt;YouTube&lt;/a&gt;).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="tldr"&gt;
+TL;DR
+&lt;a class="heading-anchor" href="#tldr" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Si tu retiens une seule idée : &lt;strong&gt;le “prompt engineering” n’est pas le sujet&lt;/strong&gt;. Le sujet, c’est &lt;strong&gt;l’ingénierie du contexte&lt;/strong&gt; et &lt;strong&gt;du contrat&lt;/strong&gt; entre ton code et le modèle :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;mémoire&lt;/strong&gt; (court/long terme, cohérence, conflits),&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;outils&lt;/strong&gt; (fonctions appelables par le LLM),&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;sorties structurées&lt;/strong&gt; (JSON/records/enums au lieu de texte libre),&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;observabilité + timeouts + fallbacks&lt;/strong&gt; (parce que “ça marche en démo” ne vaut rien en prod).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;La conf le dit sans détour : ce n’est pas de la magie, c’est du logiciel.&lt;/p&gt;</description></item><item><title>Spring Boot + Kotlin : NoClassDefFoundError: jakarta/servlet/Filter (root cause + fix)</title><link>https://herdev.hervedarritchon.fr/en/kotlin-spring-no-default-package/</link><pubDate>Sat, 20 Dec 2025 19:10:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/en/kotlin-spring-no-default-package/</guid><description>&lt;h2 id="tldr-fix-it-in-60-seconds"&gt;
 TL;DR (fix it in 60 seconds)
 &lt;a class="heading-anchor" href="#tldr-fix-it-in-60-seconds" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
 &lt;/h2&gt;

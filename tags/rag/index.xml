@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rag on HerDev Blog</title><link>https://herdev.hervedarritchon.fr/tags/rag/</link><description>Recent content in Rag on HerDev Blog</description><generator>Hugo</generator><language>fr-FR</language><lastBuildDate>Thu, 08 Jan 2026 14:41:14 +0100</lastBuildDate><atom:link href="https://herdev.hervedarritchon.fr/tags/rag/index.xml" rel="self" type="application/rss+xml"/><item><title>AI &amp; Java : passer des prompts au logiciel (vraiment) – mémoire, outils, JSON et Quarkus</title><link>https://herdev.hervedarritchon.fr/ai-java-passer-des-prompts-au-logiciel/</link><pubDate>Tue, 06 Jan 2026 00:00:00 +0000</pubDate><guid>https://herdev.hervedarritchon.fr/ai-java-passer-des-prompts-au-logiciel/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;Inspiré de la conf vJUG CONNECT “AI &amp;amp; Java: From Structured Prompts to Smarter Apps” (&lt;a href="https://www.youtube.com/watch?v=8l1obGG_6jQ"&gt;YouTube&lt;/a&gt;).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="tldr"&gt;
+TL;DR
+&lt;a class="heading-anchor" href="#tldr" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Si tu retiens une seule idée : &lt;strong&gt;le “prompt engineering” n’est pas le sujet&lt;/strong&gt;. Le sujet, c’est &lt;strong&gt;l’ingénierie du contexte&lt;/strong&gt; et &lt;strong&gt;du contrat&lt;/strong&gt; entre ton code et le modèle :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;mémoire&lt;/strong&gt; (court/long terme, cohérence, conflits),&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;outils&lt;/strong&gt; (fonctions appelables par le LLM),&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;sorties structurées&lt;/strong&gt; (JSON/records/enums au lieu de texte libre),&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;observabilité + timeouts + fallbacks&lt;/strong&gt; (parce que “ça marche en démo” ne vaut rien en prod).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;La conf le dit sans détour : ce n’est pas de la magie, c’est du logiciel.&lt;/p&gt;</description></item></channel></rss>
