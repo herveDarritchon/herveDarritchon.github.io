@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Jvm on HerDev Blog</title><link>https://herdev.hervedarritchon.fr/categories/jvm/</link><description>Recent content in Jvm on HerDev Blog</description><generator>Hugo</generator><language>fr-FR</language><lastBuildDate>Thu, 08 Jan 2026 22:21:18 +0100</lastBuildDate><atom:link href="https://herdev.hervedarritchon.fr/categories/jvm/index.xml" rel="self" type="application/rss+xml"/><item><title>La null-safety de Kotlin n’est pas magique — c’est un contrat écrit dans le bytecode</title><link>https://herdev.hervedarritchon.fr/kotlin-null-safety-bytecode-contract/</link><pubDate>Thu, 08 Jan 2026 21:00:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/kotlin-null-safety-bytecode-contract/</guid><description>&lt;h2 id="tldr"&gt;
+&lt;strong&gt;TL;DR&lt;/strong&gt;
+&lt;a class="heading-anchor" href="#tldr" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;La null-safety de Kotlin n’est pas de la magie d’IDE : c’est un &lt;strong&gt;contrat&lt;/strong&gt; encodé dans le &lt;strong&gt;bytecode&lt;/strong&gt;. Le compilateur
+publie la nullabilité via &lt;code&gt;@kotlin.Metadata&lt;/code&gt; et des annotations &lt;code&gt;@NotNull/@Nullable&lt;/code&gt;, que l’IDE lit pour te prévenir. Et
+si Java passe quand même &lt;code&gt;null&lt;/code&gt;, Kotlin &lt;strong&gt;échoue immédiatement&lt;/strong&gt; à la frontière avec
+&lt;code&gt;Intrinsics.checkNotNullParameter(...)&lt;/code&gt;, évitant qu’un état corrompu se propage plus loin dans ton code.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id="la-null-safety-de-kotlin-nest-pas-magique--cest-un-contrat-écrit-dans-le-bytecode"&gt;
+La null-safety de Kotlin n’est pas magique — c’est un contrat écrit dans le bytecode
+&lt;a class="heading-anchor" href="#la-null-safety-de-kotlin-nest-pas-magique--cest-un-contrat-%c3%a9crit-dans-le-bytecode" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;Si tu as déjà travaillé dans une base de code mêlant Kotlin et Java, tu as probablement rencontré une forme de “magie”.
+Tu construis soigneusement une classe Kotlin avec des paramètres non nullables, ce qui garantit son intégrité interne.
+Puis tu passes dans un fichier Java, tu essaies d’instancier cette classe, et tu envoies &lt;code&gt;null&lt;/code&gt; à l’un de ces paramètres
+supposés “safe”. Instantanément, ton IDE affiche un avertissement : « Passing ‘null’ argument to parameter annotated as
+&lt;code&gt;@NotNull&lt;/code&gt; ».&lt;/p&gt;</description></item></channel></rss>
