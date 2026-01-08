@@ -8,11 +8,8 @@ mémoire (court/long terme, cohérence, conflits), outils (fonctions appelables 
 <a href=/about/>À propos</a>
 <span class=lang-switcher><select aria-label=Language onchange="this.value&&(window.location.href=this.value)"><option value=/ai-java-passer-des-prompts-au-logiciel/ selected>Français</option><option value=/en/ai-java-passer-des-prompts-au-logiciel/>English</option></select></span></ul></div></div></nav><nav aria-label=Breadcrumb><ul class="breadcrumb border"><li><a href=/></a></li><li><a href=/posts/>Blog</a></li><li><a href=/posts/jvm/>JVM</a></li><li aria-current=page>AI & Java : passer des prompts au logiciel (vraiment) – mémoire, outils, JSON et Quarkus</li></ul></nav><main><h1 class=post-title>AI & Java : passer des prompts au logiciel (vraiment) – mémoire, outils, JSON et Quarkus</h1><strong>Publish date: </strong>6 Jan 2026<br><strong>Tags: </strong><a href=/tags/java>java</a>
 <a href=/tags/quarkus>quarkus</a>
-<a href=/tags/llm>llm</a>
 <a href=/tags/agents>agents</a>
 <a href=/tags/rag>rag</a>
-<a href=/tags/tool-calling>tool-calling</a>
-<a href=/tags/structured-output>structured-output</a>
 <a href=/tags/architecture>architecture</a>
 <a href=/tags/langchain4j>langchain4j</a><blockquote><p>Inspiré de la conf vJUG CONNECT “AI & Java: From Structured Prompts to Smarter Apps” (<a href="https://www.youtube.com/watch?v=8l1obGG_6jQ">YouTube</a>).</p></blockquote><h2 id=tldr>TL;DR
 <a class=heading-anchor href=#tldr aria-label="Lien vers cette section">#</a></h2><p>Si tu retiens une seule idée : <strong>le “prompt engineering” n’est pas le sujet</strong>. Le sujet, c’est <strong>l’ingénierie du contexte</strong> et <strong>du contrat</strong> entre ton code et le modèle :</p><ul><li><strong>mémoire</strong> (court/long terme, cohérence, conflits),</li><li><strong>outils</strong> (fonctions appelables par le LLM),</li><li><strong>sorties structurées</strong> (JSON/records/enums au lieu de texte libre),</li><li><strong>observabilité + timeouts + fallbacks</strong> (parce que “ça marche en démo” ne vaut rien en prod).</li></ul><p>La conf le dit sans détour : ce n’est pas de la magie, c’est du logiciel.</p><hr><h2 id=1-le-modèle-se-souvient-non-il-a-une-fenêtre-de-contexte>1) “Le modèle se souvient”… non. Il a une fenêtre de contexte.
