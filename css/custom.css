@@ -294,3 +294,7 @@ h6:hover .heading-anchor {
     right: .5rem;
     font-size: .85rem;
 }
+
+.footnote-backref {
+	font-size: 0.7rem;
+}

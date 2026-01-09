@@ -1,11 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Jvm on HerDev Blog</title><link>https://herdev.hervedarritchon.fr/en/categories/jvm/</link><description>Recent content in Jvm on HerDev Blog</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Thu, 08 Jan 2026 22:21:18 +0100</lastBuildDate><atom:link href="https://herdev.hervedarritchon.fr/en/categories/jvm/index.xml" rel="self" type="application/rss+xml"/><item><title>Kotlin's Null Safety Isn't Magic—It's a Contract Written in Bytecode</title><link>https://herdev.hervedarritchon.fr/en/kotlin-null-safety-bytecode-contract/</link><pubDate>Thu, 08 Jan 2026 21:00:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/en/kotlin-null-safety-bytecode-contract/</guid><description>&lt;h2 id="tldr"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Jvm on HerDev Blog</title><link>https://herdev.hervedarritchon.fr/en/categories/jvm/</link><description>Recent content in Jvm on HerDev Blog</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Fri, 09 Jan 2026 09:51:53 +0100</lastBuildDate><atom:link href="https://herdev.hervedarritchon.fr/en/categories/jvm/index.xml" rel="self" type="application/rss+xml"/><item><title>Kotlin's Null Safety Isn't Magic—It's a Contract Written in Bytecode</title><link>https://herdev.hervedarritchon.fr/en/kotlin-null-safety-bytecode-contract/</link><pubDate>Thu, 08 Jan 2026 21:00:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/en/kotlin-null-safety-bytecode-contract/</guid><description>&lt;h2 id="tldr"&gt;
 &lt;strong&gt;TL;DR&lt;/strong&gt;
 &lt;a class="heading-anchor" href="#tldr" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Kotlin’s null-safety isn’t IDE magic: it’s a &lt;strong&gt;contract&lt;/strong&gt; encoded in the &lt;strong&gt;bytecode&lt;/strong&gt;. The compiler publishes
-nullability via &lt;code&gt;@kotlin.Metadata&lt;/code&gt; plus &lt;code&gt;@NotNull/@Nullable&lt;/code&gt; annotations, which the IDE reads to warn you. And if Java
+&lt;p&gt;Kotlin’s null-safety isn’t IDE magic: it’s a &lt;strong&gt;contract&lt;/strong&gt; encoded in the &lt;strong&gt;bytecode&lt;/strong&gt;&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;. The
+compiler publishes
+nullability via &lt;code&gt;@kotlin.Metadata&lt;/code&gt; plus &lt;code&gt;@NotNull/@Nullable&lt;/code&gt; annotations, which the IDE reads to warn
+you&lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;sup id="fnref:3"&gt;&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref"&gt;3&lt;/a&gt;&lt;/sup&gt;. And if Java
 still passes &lt;code&gt;null&lt;/code&gt;, Kotlin &lt;strong&gt;fails fast&lt;/strong&gt; at the boundary with &lt;code&gt;Intrinsics.checkNotNullParameter(...)&lt;/code&gt;, preventing
-corrupted state deeper in your code.&lt;/p&gt;
+corrupted state deeper in your code.&lt;sup id="fnref:4"&gt;&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id="kotlins-null-safety-isnt-magicits-a-contract-written-in-bytecode"&gt;
 Kotlin&amp;rsquo;s Null Safety Isn&amp;rsquo;t Magic—It&amp;rsquo;s a Contract Written in Bytecode
@@ -14,4 +16,4 @@ Kotlin&amp;rsquo;s Null Safety Isn&amp;rsquo;t Magic—It&amp;rsquo;s a Contract
 &lt;p&gt;If you&amp;rsquo;ve ever worked in a mixed Kotlin and Java codebase, you&amp;rsquo;ve likely encountered a specific kind of &amp;ldquo;magic.&amp;rdquo; You
 meticulously craft a Kotlin class with non-nullable parameters, guaranteeing its internal integrity. Then, you switch to
 a Java file, try to instantiate that class, and pass &lt;code&gt;null&lt;/code&gt; to one of those &amp;ldquo;safe&amp;rdquo; parameters. Instantly, your IDE flags
-it with a warning: “Passing ‘null’ argument to parameter annotated as &lt;code&gt;@NotNull&lt;/code&gt;”.&lt;/p&gt;</description></item></channel></rss>
+it with a warning: “Passing ‘null’ argument to parameter annotated as &lt;code&gt;@NotNull&lt;/code&gt;”&lt;sup id="fnref:5"&gt;&lt;a href="#fn:5" class="footnote-ref" role="doc-noteref"&gt;5&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;</description></item></channel></rss>
