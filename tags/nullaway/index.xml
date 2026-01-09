@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nullaway on HerDev Blog</title><link>https://herdev.hervedarritchon.fr/tags/nullaway/</link><description>Recent content in Nullaway on HerDev Blog</description><generator>Hugo</generator><language>fr-FR</language><lastBuildDate>Fri, 09 Jan 2026 23:17:24 +0100</lastBuildDate><atom:link href="https://herdev.hervedarritchon.fr/tags/nullaway/index.xml" rel="self" type="application/rss+xml"/><item><title>4 révélations qui vont transformer votre approche de la null-safety en Java (JSpecify + NullAway)</title><link>https://herdev.hervedarritchon.fr/java-null-safety-jspecify-nullaway-4-revelations.md/</link><pubDate>Fri, 09 Jan 2026 21:00:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/java-null-safety-jspecify-nullaway-4-revelations.md/</guid><description>&lt;h2 id="tldr"&gt;
+TL;DR
+&lt;a class="heading-anchor" href="#tldr" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;JSpecify 1.0.0&lt;/strong&gt; met fin à la tour de Babel des &lt;code&gt;@Nullable&lt;/code&gt; en standardisant &lt;strong&gt;4 annotations stables&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;@NullMarked&lt;/strong&gt; inverse le défaut : &lt;em&gt;non-null par défaut&lt;/em&gt;, &lt;code&gt;@Nullable&lt;/code&gt; devient l’exception visible.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;IDE et CI convergent&lt;/strong&gt; : IntelliJ et NullAway se sont alignés (notamment sur les suppressions).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;TYPE_USE&lt;/strong&gt; rend la nullité “chirurgicale” (tableaux, génériques), mais il faut apprendre la grammaire.&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>
