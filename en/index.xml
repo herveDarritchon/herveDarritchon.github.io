@@ -52,7 +52,17 @@ Summary
 Why Hugo
 &lt;a class="heading-anchor" href="#why-hugo" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;I wanted something simple, fast to load, free, and without platform-injected content that could distract readers. I also wanted to write in Markdown and generate a static site from those files.&lt;/p&gt;</description></item><item><title>VS Code: setting up a context engineering workflow (instructions, agents, handoffs)</title><link>https://herdev.hervedarritchon.fr/en/vscode-context-engineering-workflow/</link><pubDate>Sun, 11 Jan 2026 12:00:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/en/vscode-context-engineering-workflow/</guid><description>&lt;h2 id="tldr"&gt;
+&lt;p&gt;I wanted something simple, fast to load, free, and without platform-injected content that could distract readers. I also wanted to write in Markdown and generate a static site from those files.&lt;/p&gt;</description></item><item><title>VS Code: Agent Skills — capture know-how without bloating context</title><link>https://herdev.hervedarritchon.fr/en/vscode-agent-skills/</link><pubDate>Sun, 11 Jan 2026 13:00:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/en/vscode-agent-skills/</guid><description>&lt;h2 id="tldr"&gt;
+TL;DR
+&lt;a class="heading-anchor" href="#tldr" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;An LLM without context isn’t “bad”: it’s &lt;strong&gt;general-purpose&lt;/strong&gt;. &lt;em&gt;Agent Skills&lt;/em&gt; let you &lt;strong&gt;inject procedural know-how&lt;/strong&gt; at the right moment, without drowning the context window.&lt;/li&gt;
+&lt;li&gt;A skill = &lt;strong&gt;a folder&lt;/strong&gt; (portable) with &lt;code&gt;SKILL.md&lt;/code&gt; (YAML &lt;code&gt;name&lt;/code&gt; + &lt;code&gt;description&lt;/code&gt; required) + resources (scripts, templates, examples).&lt;/li&gt;
+&lt;li&gt;Loaded &lt;strong&gt;on demand&lt;/strong&gt; via &lt;strong&gt;semantic triggering&lt;/strong&gt; (match on &lt;code&gt;description&lt;/code&gt;) + &lt;strong&gt;progressive disclosure&lt;/strong&gt; across 3 levels (metadata → instructions → resources).&lt;/li&gt;
+&lt;li&gt;In VS Code 1.108, support is &lt;strong&gt;experimental&lt;/strong&gt; and controlled via &lt;code&gt;chat.useAgentSkills&lt;/code&gt;.&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;Combine &lt;em&gt;Skills&lt;/em&gt; (the &lt;strong&gt;what&lt;/strong&gt;) + &lt;em&gt;Custom Agents&lt;/em&gt; (the &lt;strong&gt;who&lt;/strong&gt;) + &lt;em&gt;Handoffs&lt;/em&gt; (the &lt;strong&gt;workflow&lt;/strong&gt;) to stop “prompt-hacking”.&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>VS Code: setting up a context engineering workflow (instructions, agents, handoffs)</title><link>https://herdev.hervedarritchon.fr/en/vscode-context-engineering-workflow/</link><pubDate>Sun, 11 Jan 2026 12:00:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/en/vscode-context-engineering-workflow/</guid><description>&lt;h2 id="tldr"&gt;
 TL;DR
 &lt;a class="heading-anchor" href="#tldr" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
 &lt;/h2&gt;

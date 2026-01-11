@@ -1,0 +1,152 @@
+<!doctype html><html lang=fr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=generator content="Hugo 0.152.2"><link rel=canonical href=https://herdev.hervedarritchon.fr/vscode-agent-skills/><meta name=description content=" TL;DR # Un LLM sans contexte n’est pas “mauvais” : il est généraliste. Les Agent Skills servent à injecter du savoir-faire procédural au bon moment, sans noyer la fenêtre de contexte. Une skill = un dossier (portable) avec SKILL.md (YAML name + description obligatoires) + ressources (scripts, templates, exemples). Chargement à la demande via déclenchement sémantique (match sur description) + divulgation progressive en 3 niveaux (métadonnées → instructions → ressources). Dans VS Code 1.108, le support est expérimental et se pilote avec chat.useAgentSkills.1 Combinez Skills (le quoi) + Custom Agents (le qui) + Handoffs (le workflow) pour arrêter de “prompt-hacker”. "><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#000000><meta name=msapplication-TileColor content="#ffffff"><meta name=theme-color content="#ffffff"><link rel=stylesheet href=/css/fonts.min.12aca0e9946ce0e9735d489da16622b9aa967cf751cfe8a1c44e13ff06bf2390.css><link rel=stylesheet type=text/css href=/css/paper.min.css><link rel=stylesheet type=text/css href=/css/custom.css><script data-goatcounter=https://behaska.goatcounter.com/count async src=https://gc.zgo.at/count.js></script><title>VS Code : Agent Skills — capitaliser du savoir-faire sans saturer le contexte | HerDev Blog</title></head><body><div class="container paper"><nav class="border split-nav"><div class=nav-brand><h3><a href=/ class=nav-brand-link><img src=/logo.webp alt="HerDev Blog" class=nav-brand-logo style=height:50px;width:auto>
+<span class=nav-brand-title>HerDev Blog</span></a></h3></div><div class=collapsible><input id=collapsible1 type=checkbox name=collapsible1>
+<button>
+<label for=collapsible1><div class=bar1></div><div class=bar2></div><div class=bar3></div></label></button><div class=collapsible-body><ul class=inline><a href=/posts/>Blog</a>
+<a href=/tags/>Tags</a>
+<a href=/about/>À propos</a>
+<span class=lang-switcher><select aria-label=Language onchange="this.value&&(window.location.href=this.value)"><option value=/vscode-agent-skills/ selected>Français</option><option value=/en/vscode-agent-skills/>English</option></select></span></ul></div></div></nav><nav aria-label=Breadcrumb><ul class="breadcrumb border"><li><a href=/></a></li><li><a href=/posts/>Blog</a></li><li><a href=/posts/ide/>IDE</a></li><li aria-current=page>VS Code : Agent Skills — capitaliser du savoir-faire sans saturer le contexte</li></ul></nav><main><h1 class=post-title>VS Code : Agent Skills — capitaliser du savoir-faire sans saturer le contexte</h1><strong>Publish date: </strong>11 Jan 2026<br><strong>Tags: </strong><a href=/tags/vscode>vscode</a>
+<a href=/tags/github-copilot>github-copilot</a>
+<a href=/tags/agents>agents</a>
+<a href=/tags/agent-skills>agent-skills</a>
+<a href=/tags/context-engineering>context-engineering</a><h2 id=tldr>TL;DR
+<a class=heading-anchor href=#tldr aria-label="Lien vers cette section">#</a></h2><ul><li>Un LLM sans contexte n’est pas “mauvais” : il est <strong>généraliste</strong>. Les <em>Agent Skills</em> servent à <strong>injecter du savoir-faire procédural</strong> au bon moment, sans noyer la fenêtre de contexte.</li><li>Une skill = <strong>un dossier</strong> (portable) avec <code>SKILL.md</code> (YAML <code>name</code> + <code>description</code> obligatoires) + ressources (scripts, templates, exemples).</li><li>Chargement <strong>à la demande</strong> via <strong>déclenchement sémantique</strong> (match sur <code>description</code>) + <strong>divulgation progressive</strong> en 3 niveaux (métadonnées → instructions → ressources).</li><li>Dans VS Code 1.108, le support est <strong>expérimental</strong> et se pilote avec <code>chat.useAgentSkills</code>.<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup></li><li>Combinez <em>Skills</em> (le <strong>quoi</strong>) + <em>Custom Agents</em> (le <strong>qui</strong>) + <em>Handoffs</em> (le <strong>workflow</strong>) pour arrêter de “prompt-hacker”.</li></ul><h2 id=du-chat-au-coéquipier-spécialisé-sans-magie>Du “chat” au coéquipier spécialisé (sans magie)
+<a class=heading-anchor href=#du-chat-au-co%c3%a9quipier-sp%c3%a9cialis%c3%a9-sans-magie aria-label="Lien vers cette section">#</a></h2><p>On attend souvent d’un assistant IA qu’il sache <em>déjà</em> vos conventions, vos scripts de release, votre CI, votre manière de diagnostiquer un bug, vos règles de PR… sauf que :</p><ul><li>la fenêtre de contexte est finie ;</li><li>le modèle est généraliste ;</li><li>et les instructions “toujours actives” finissent en bruit.</li></ul><p>Les <strong>Agent Skills</strong> attaquent précisément ce problème : <strong>rendre disponible un mode opératoire spécialisé</strong> uniquement quand il est pertinent.</p><h2 id=agent-skills--définition-opérationnelle>Agent Skills : définition opérationnelle
+<a class=heading-anchor href=#agent-skills--d%c3%a9finition-op%c3%a9rationnelle aria-label="Lien vers cette section">#</a></h2><p>Une <em>Agent Skill</em> est un <strong>dossier</strong> contenant :</p><ul><li>un fichier <strong><code>SKILL.md</code></strong> (obligatoire) : métadonnées + instructions ;</li><li>des ressources optionnelles (scripts, templates, exemples) que l’agent peut charger si nécessaire.</li></ul><p>C’est un <strong>standard ouvert</strong>, pensé pour être réutilisable d’un produit à l’autre (pas juste “un réglage VS Code”). Voir le standard Agent Skills : <a href=https://agentskills.io/home%5B%5Estandard-agent-skills%5D>https://agentskills.io/home[^standard-agent-skills]</a></p><h3 id=format-minimal-de-skillmd>Format minimal de <code>SKILL.md</code>
+<a class=heading-anchor href=#format-minimal-de-skillmd aria-label="Lien vers cette section">#</a></h3><p>Le cœur, c’est le frontmatter YAML : <code>name</code> + <code>description</code> sont obligatoires.<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup></p><div class=codeblock><button class=codeblock__copy type=button aria-label="Copy code">Copy</button><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>name</span>: <span style=color:#ae81ff>webapp-testing</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>description</span>: <span style=color:#ae81ff>Guide pour créer, exécuter et déboguer des tests Playwright. À utiliser quand on demande des tests E2E ou le diagnostic d’un test navigateur.</span>
+</span></span><span style=display:flex><span>---</span></span></code></pre></div></div><p>Ensuite, vous écrivez la procédure (Markdown) : étapes, entrées/sorties attendues, références aux ressources du dossier.</p><h2 id=pourquoi-ça-marche--déclenchement-sémantique--divulgation-progressive>Pourquoi ça marche : déclenchement sémantique + divulgation progressive
+<a class=heading-anchor href=#pourquoi-%c3%a7a-marche--d%c3%a9clenchement-s%c3%a9mantique--divulgation-progressive aria-label="Lien vers cette section">#</a></h2><p>La mécanique est simple et robuste :</p><ol><li><strong>Découverte</strong> : Copilot ne connaît que <code>name</code> + <code>description</code> (léger).</li><li><strong>Chargement des instructions</strong> : si votre demande “matche” sémantiquement la <code>description</code>, le corps de <code>SKILL.md</code> est injecté.</li><li><strong>Accès aux ressources</strong> : les fichiers annexes ne sont chargés <strong>que si</strong> <code>SKILL.md</code> les référence.</li></ol><p>Résultat : vous pouvez installer beaucoup de skills sans “payer” le coût contextuel en permanence.</p><h2 id=skills-vs-instructions--arrêtez-de-tout-mettre-au-même-endroit>Skills vs instructions : arrêtez de tout mettre au même endroit
+<a class=heading-anchor href=#skills-vs-instructions--arr%c3%aatez-de-tout-mettre-au-m%c3%aame-endroit aria-label="Lien vers cette section">#</a></h2><p>Les <em>custom instructions</em> servent bien pour des règles <strong>stables et transverses</strong> (style, conventions).
+Les <em>Agent Skills</em> sont faites pour des workflows <strong>spécialisés</strong> et <strong>déclenchés à la demande</strong> : diagnostic CI, release, playbook incident, génération de tests, migration, etc.<sup id=fnref1:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup></p><p><strong>Heuristique franche</strong> :</p><ul><li>si c’est “toujours vrai” → instructions ;</li><li>si c’est “vrai quand je fais X” → skill.</li></ul><h2 id=mise-en-place-dans-vs-code-à-reproduire>Mise en place dans VS Code (À reproduire)
+<a class=heading-anchor href=#mise-en-place-dans-vs-code-%c3%a0-reproduire aria-label="Lien vers cette section">#</a></h2><h3 id=1-activer-le-support-1108>1) Activer le support (1.108+)
+<a class=heading-anchor href=#1-activer-le-support-1108 aria-label="Lien vers cette section">#</a></h3><p>Dans VS Code 1.108, c’est derrière un flag :</p><ul><li>Paramètre : <code>chat.useAgentSkills</code><sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup></li></ul><h3 id=2-choisir-lemplacement>2) Choisir l’emplacement
+<a class=heading-anchor href=#2-choisir-lemplacement aria-label="Lien vers cette section">#</a></h3><p>VS Code détecte :</p><ul><li><strong>Skills de projet</strong> : <code>.github/skills/</code> (recommandé) ou <code>.claude/skills/</code> (legacy)</li><li><strong>Skills personnelles</strong> : <code>~/.github/skills/</code> (recommandé) ou <code>~/.claude/skills/</code> (legacy)</li></ul><blockquote><p>Note : côté GitHub Copilot CLI / coding agent, vous verrez aussi <code>~/.copilot/skills</code> comme répertoire personnel (selon l’outil).<sup id=fnref1:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup></p></blockquote><h3 id=3-structure-de-repo-recommandée>3) Structure de repo recommandée
+<a class=heading-anchor href=#3-structure-de-repo-recommand%c3%a9e aria-label="Lien vers cette section">#</a></h3><div class=codeblock><button class=codeblock__copy type=button aria-label="Copy code">Copy</button><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>.github/
+</span></span><span style=display:flex><span>  skills/
+</span></span><span style=display:flex><span>    hugo-post/
+</span></span><span style=display:flex><span>      SKILL.md
+</span></span><span style=display:flex><span>      templates/
+</span></span><span style=display:flex><span>        post.md
+</span></span><span style=display:flex><span>    ci-debug/
+</span></span><span style=display:flex><span>      SKILL.md
+</span></span><span style=display:flex><span>      checklists/
+</span></span><span style=display:flex><span>        triage.md
+</span></span><span style=display:flex><span>  agents/
+</span></span><span style=display:flex><span>    planner.agent.md
+</span></span><span style=display:flex><span>    implementer.agent.md</span></span></code></pre></div></div><h2 id=exemple-concret--2-skills-rentables-tout-de-suite>Exemple concret : 2 skills “rentables” tout de suite
+<a class=heading-anchor href=#exemple-concret--2-skills-rentables-tout-de-suite aria-label="Lien vers cette section">#</a></h2><h3 id=skill-1--hugo-post--générer-un-post-hugo-cohérent-front-matter--sections>Skill 1 — <code>hugo-post</code> : générer un post Hugo cohérent (front matter + sections)
+<a class=heading-anchor href=#skill-1--hugo-post--g%c3%a9n%c3%a9rer-un-post-hugo-coh%c3%a9rent-front-matter--sections aria-label="Lien vers cette section">#</a></h3><p><strong>Objectif</strong> : vous empêcher de repartir de zéro et garantir une structure durable (TL;DR, <code>&lt;!--more--></code>, refs, changelog).</p><p><code>./.github/skills/hugo-post/SKILL.md</code></p><div class=codeblock><button class=codeblock__copy type=button aria-label="Copy code">Copy</button><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-md data-lang=md><span style=display:flex><span>---
+</span></span><span style=display:flex><span>name: hugo-post
+</span></span><span style=display:flex><span>description: Créer ou refactorer un article Hugo (front matter YAML + TL;DR + &lt;!--more--&gt; + sections + refs + changelog). Utiliser quand on demande un blog post “prêt à committer”.
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span># Hugo post (HerDev) — Procédure
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Quand utiliser
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>-</span> Création d’un nouvel article
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Réécriture/normalisation d’un article existant
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Uniformisation front matter / slug / tags
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Procédure
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>1.</span> Proposer un <span style=font-weight:700>**slug**</span> stable (kebab-case) et une <span style=font-weight:700>**description**</span> SEO sobre.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>2.</span> Générer le squelette depuis le template : <span style=color:#e6db74>`./templates/post.md`</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>3.</span> Remplir :
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>-</span> TL;DR (4–6 bullets)
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>-</span> <span style=color:#e6db74>`&lt;!--more--&gt;`</span> après le TL;DR
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>-</span> sections orientées “doc+procédure”
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>-</span> pièges + limites + alternatives
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>-</span> checklist de sortie (signaux observables)
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>-</span> Références (liens primaires)
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>-</span> Changelog
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Contraintes d’écriture
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>-</span> Zéro hype, zéro promesse magique.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Dire ce qui est “À reproduire” si non testé.
+</span></span><span style=display:flex><span>- Préférer “vous/on”.</span></span></code></pre></div></div><p><code>./.github/skills/hugo-post/templates/post.md</code></p><div class=codeblock><button class=codeblock__copy type=button aria-label="Copy code">Copy</button><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-md data-lang=md><span style=display:flex><span>---
+</span></span><span style=display:flex><span>title: &#34;&#34;
+</span></span><span style=display:flex><span>date: &#34;&#34;
+</span></span><span style=display:flex><span>description: &#34;&#34;
+</span></span><span style=display:flex><span>slug: &#34;&#34;
+</span></span><span style=display:flex><span>categories: []
+</span></span><span style=display:flex><span>series: &#34;&#34;
+</span></span><span style=display:flex><span>tags: []
+</span></span><span style=display:flex><span>draft: true
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## TL;DR
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>- 
+</span></span><span style=display:flex><span>- 
+</span></span><span style=display:flex><span>- 
+</span></span><span style=display:flex><span>- 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;!--more--&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Contexte
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Procédure
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Validation
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Pièges et limites
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Alternatives
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Checklist de sortie
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> [ ] 
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> [ ] 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Références
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>- 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Changelog
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>- YYYY-MM-DD : création</span></span></code></pre></div></div><h3 id=skill-2--ci-debug--playbook-de-diagnostic-ci>Skill 2 — <code>ci-debug</code> : playbook de diagnostic CI
+<a class=heading-anchor href=#skill-2--ci-debug--playbook-de-diagnostic-ci aria-label="Lien vers cette section">#</a></h3><p><strong>Objectif</strong> : imposer une routine (repro → logs → hypothèses → fix → vérif).</p><p><code>./.github/skills/ci-debug/SKILL.md</code></p><div class=codeblock><button class=codeblock__copy type=button aria-label="Copy code">Copy</button><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-md data-lang=md><span style=display:flex><span>---
+</span></span><span style=display:flex><span>name: ci-debug
+</span></span><span style=display:flex><span>description: Diagnostiquer un pipeline CI en échec (GitHub Actions, etc.). Utiliser quand on demande “pourquoi ça casse en CI” ou “corrige le build”.
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span># CI Debug — Playbook
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Process
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>1.</span> Identifier le job/step qui casse + message d’erreur exact.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>2.</span> Classer l’échec :
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>-</span> dépendance/versions
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>-</span> cache
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>-</span> permissions
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>-</span> flakiness (tests)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>3.</span> Reproduire localement si possible (mêmes versions).
+</span></span><span style=display:flex><span><span style=color:#66d9ef>4.</span> Proposer <span style=font-weight:700>**1 fix**</span> minimal + <span style=font-weight:700>**1 check**</span> (preuve).
+</span></span><span style=display:flex><span><span style=color:#66d9ef>5.</span> Ajouter garde-fou (test, assertion, pin de version, doc).
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Sortie attendue
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>-</span> Cause probable (avec indices)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Correctif minimal
+</span></span><span style=display:flex><span>- Validation (commande/log attendu)</span></span></code></pre></div></div><h2 id=orchestration--skills-le-quoi--custom-agents-le-qui--handoffs-le-workflow>Orchestration : Skills (le quoi) + Custom Agents (le qui) + Handoffs (le workflow)
+<a class=heading-anchor href=#orchestration--skills-le-quoi--custom-agents-le-qui--handoffs-le-workflow aria-label="Lien vers cette section">#</a></h2><p>Les skills ne remplacent pas les agents personnalisés. Ils les <strong>alimentent</strong>.<sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup></p><ul><li>Un <strong>agent “Planification”</strong> peut s’appuyer sur une skill “Architecture ADR”.</li><li>Un <strong>agent “Implémentation”</strong> peut charger une skill “Migration DB”.</li><li>Un <strong>agent “Review”</strong> peut déclencher une skill “Checklist sécurité”.</li></ul><h3 id=exemple-de-handoff-plan--implémentation>Exemple de handoff (plan → implémentation)
+<a class=heading-anchor href=#exemple-de-handoff-plan--impl%c3%a9mentation aria-label="Lien vers cette section">#</a></h3><p>Les custom agents sont des fichiers <code>.agent.md</code> dans <code>.github/agents/</code>.<sup id=fnref1:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup></p><p><code>./.github/agents/planner.agent.md</code></p><div class=codeblock><button class=codeblock__copy type=button aria-label="Copy code">Copy</button><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-md data-lang=md><span style=display:flex><span>---
+</span></span><span style=display:flex><span>name: Planner
+</span></span><span style=display:flex><span>description: Génère un plan d’implémentation par étapes validables.
+</span></span><span style=display:flex><span>tools: [&#39;search&#39;, &#39;fetch&#39;]
+</span></span><span style=display:flex><span>handoffs:
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>-</span> label: Démarrer l’implémentation
+</span></span><span style=display:flex><span>    agent: implementer
+</span></span><span style=display:flex><span>    prompt: Implémente le plan ci-dessus. Commence par les tests, puis le code, puis la vérif.
+</span></span><span style=display:flex><span>    send: false
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>Tu produis un plan numéroté, avec critères de validation par étape.</span></span></code></pre></div></div><p><code>send: false</code> force un humain dans la boucle. <code>send: true</code> est tentant… et dangereux tant que votre chaîne n’est pas éprouvée.</p><h2 id=gouvernance--traitez-vos-skills-comme-du-code>Gouvernance : traitez vos skills comme du code
+<a class=heading-anchor href=#gouvernance--traitez-vos-skills-comme-du-code aria-label="Lien vers cette section">#</a></h2><p>Une skill, ce n’est pas un post-it. C’est un <strong>artefact de prod</strong> :</p><ul><li><strong>Versionnez</strong> <code>.github/skills/</code> comme du code.</li><li><strong>Code review</strong> obligatoire : une skill peut inciter à exécuter des scripts.</li><li>Évitez les descriptions vagues (“aide pour tout”) : vous tuez le déclenchement sémantique.</li><li>Gardez les skills petites : 1 tâche = 1 skill. Sinon elles deviennent des “manuels” que personne ne charge bien.</li></ul><h2 id=pièges-fréquents-et-comment-les-éviter>Pièges fréquents (et comment les éviter)
+<a class=heading-anchor href=#pi%c3%a8ges-fr%c3%a9quents-et-comment-les-%c3%a9viter aria-label="Lien vers cette section">#</a></h2><ul><li><strong>Description trop large</strong> → déclenchement aléatoire.
+<em>Fix</em> : mentionner clairement “quand l’utiliser” + 3 cas d’usage typiques.</li><li><strong>Skill monolithe</strong> → instructions longues, rarement chargées en entier.
+<em>Fix</em> : découper en skills “playbook”.</li><li><strong>Scripts non bornés</strong> → risques de commandes destructrices.
+<em>Fix</em> : préconditions, commandes de vérif avant/après, rollback minimal, et jamais d’auto-approve par défaut.</li><li><strong>Divergence outils</strong> (VS Code vs CLI) → chemins personnels différents.
+<em>Fix</em> : documenter “où ça vit” par outil (et rester sur le standard + compat).</li></ul><h2 id=checklist-de-sortie>Checklist de sortie
+<a class=heading-anchor href=#checklist-de-sortie aria-label="Lien vers cette section">#</a></h2><ul><li><input disabled type=checkbox> <code>chat.useAgentSkills</code> activé (VS Code 1.108+)</li><li><input disabled type=checkbox> Au moins 1 skill en <code>.github/skills/&lt;skill>/SKILL.md</code></li><li><input disabled type=checkbox> <code>name</code> en kebab-case, <code>description</code> avec “quand l’utiliser”</li><li><input disabled type=checkbox> La skill contient une procédure + sorties attendues</li><li><input disabled type=checkbox> Ressources référencées via chemins relatifs (si utilisées)</li><li><input disabled type=checkbox> Revue sécurité effectuée (scripts, commandes, accès)</li><li><input disabled type=checkbox> (Optionnel) 2 agents custom + 1 handoff plan → implémentation</li></ul><h2 id=sources>Sources
+<a class=heading-anchor href=#sources aria-label="Lien vers cette section">#</a></h2><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>Microsoft — Use Agent Skills in VS Code: <a href=https://code.visualstudio.com/docs/copilot/customization/agent-skills>https://code.visualstudio.com/docs/copilot/customization/agent-skills</a>.&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>↩</a>&#160;<a href=#fnref1:1 class=footnote-backref role=doc-backlink>↩</a></p></li><li id=fn:2><p>GitHub Docs — About Agent Skills: <a href=https://docs.github.com/en/copilot/concepts/agents/about-agent-skills>https://docs.github.com/en/copilot/concepts/agents/about-agent-skills</a>.&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>↩</a>&#160;<a href=#fnref1:2 class=footnote-backref role=doc-backlink>↩</a></p></li><li id=fn:3><p>Microsoft — VS Code 1.108 release notes: <a href=https://code.visualstudio.com/updates/v1_108>https://code.visualstudio.com/updates/v1_108</a>.&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>↩</a></p></li><li id=fn:4><p>Microsoft — Custom agents in VS Code: <a href=https://code.visualstudio.com/docs/copilot/customization/custom-agents>https://code.visualstudio.com/docs/copilot/customization/custom-agents</a>.&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>↩</a>&#160;<a href=#fnref1:4 class=footnote-backref role=doc-backlink>↩</a></p></li></ol></div><div class="card post-feedback"><div class=card-body><div class=post-feedback__vote><h5 class=card-subtitle><span class=vote-label>Utile ?</span></h5><div class=post-feedback__voteWidget><div data-lyket-type=updown data-lyket-namespace=herdev data-lyket-id=f4fdff5cc33a3cb35c837c4499274b25></div></div></div><div class=post-feedback__issue><a class=paper-btn href="https://github.com/herveDarritchon/herdev-blog/issues/new?title=Bug%3A+VS+Code+%3A+Agent+Skills+%E2%80%94+capitaliser+du+savoir-faire+sans+saturer+le+contexte&amp;body=Page%3A+https%3A%2F%2Fherdev.hervedarritchon.fr%2Fvscode-agent-skills%2F%0ALangue%3A+fr%0A%0A%23%23+Probl%C3%A8me%0A%0A%23%23+Attendu%0A%0A%23%23+Contexte%0A-+Navigateur%3A%0A-+OS%3A%0A&amp;template=bug_report.yml" target=_blank rel=noopener>Signaler une erreur</a></div></div></div></main><footer class="site-footer border"><div class=site-footer__left><span>Powered by
+<a href=https://gohugo.io/ rel=noopener target=_blank>Hugo</a>
+and
+<a href=https://github.com/behaska/papercss-hugo-theme/blob/master/README.md target=_blank rel="noopener noreferrer">PaperCSS Theme</a>.</span></div><script src="https://unpkg.com/@lyket/widget@latest/dist/lyket.js?apiKey=pt_8df890b716eaafef7da06e7a853046"></script><div class=site-footer__right><a class=footer-license__link href=https://creativecommons.org/licenses/by-nc-nd/4.0/ rel=noopener target=_blank><img class=footer-license__img src=/img/license-cc-by-nc-nd.svg alt="CC BY-NC-ND 4.0"> <span class=footer-license__text>Content © Behaska 2025</span></a></div></footer></div></body></html>
