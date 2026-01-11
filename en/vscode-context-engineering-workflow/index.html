@@ -1,0 +1,276 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=generator content="Hugo 0.152.2"><link rel=canonical href=https://herdev.hervedarritchon.fr/en/vscode-context-engineering-workflow/><meta name=description content=" TL;DR # An AI assistant without context isn’t “dumb”: it’s blind. And your project pays the price (mistakes, busywork loops, inconsistent decisions). Context engineering isn’t writing better prompts: it’s making the right context available, at the right moment, in a versioned way. In VS Code, the most robust workflow fits in 3 building blocks: global instructions (.github/copilot-instructions.md) a “Plan” agent (read-only tools) → produces a stable plan an “Implementation” agent (editing + terminal) → executes the plan handoffs to move from one to the other without losing the thread. "><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#000000><meta name=msapplication-TileColor content="#ffffff"><meta name=theme-color content="#ffffff"><link rel=stylesheet href=/css/fonts.min.12aca0e9946ce0e9735d489da16622b9aa967cf751cfe8a1c44e13ff06bf2390.css><link rel=stylesheet type=text/css href=/css/paper.min.css><link rel=stylesheet type=text/css href=/css/custom.css><script data-goatcounter=https://behaska.goatcounter.com/count async src=https://gc.zgo.at/count.js></script><title>VS Code: setting up a context engineering workflow (instructions, agents, handoffs) | HerDev Blog</title></head><body><div class="container paper"><nav class="border split-nav"><div class=nav-brand><h3><a href=/ class=nav-brand-link><img src=/logo.webp alt="HerDev Blog" class=nav-brand-logo style=height:50px;width:auto>
+<span class=nav-brand-title>HerDev Blog</span></a></h3></div><div class=collapsible><input id=collapsible1 type=checkbox name=collapsible1>
+<button>
+<label for=collapsible1><div class=bar1></div><div class=bar2></div><div class=bar3></div></label></button><div class=collapsible-body><ul class=inline><a href=/en/posts/>Blog</a>
+<a href=/en/tags/>Tags</a>
+<a href=/en/about/>About</a>
+<span class=lang-switcher><select aria-label=Language onchange="this.value&&(window.location.href=this.value)"><option value=/vscode-context-engineering-workflow/>Français</option><option value=/en/vscode-context-engineering-workflow/ selected>English</option></select></span></ul></div></div></nav><nav aria-label=Breadcrumb><ul class="breadcrumb border"><li><a href=/en/></a></li><li><a href=/en/posts/>Blog</a></li><li><a href=/en/posts/ide/>Let's Blog !</a></li><li aria-current=page>VS Code: setting up a context engineering workflow (instructions, agents, handoffs)</li></ul></nav><main><h1 class=post-title>VS Code: setting up a context engineering workflow (instructions, agents, handoffs)</h1><strong>Publish date: </strong>11 Jan 2026<br><strong>Tags: </strong><a href=/en/tags/vscode>vscode</a>
+<a href=/en/tags/copilot>copilot</a>
+<a href=/en/tags/context-engineering>context-engineering</a><h2 id=tldr>TL;DR
+<a class=heading-anchor href=#tldr aria-label="Lien vers cette section">#</a></h2><ul><li>An AI assistant <strong>without context</strong> isn’t “dumb”: it’s <strong>blind</strong>. And your project pays the price (mistakes, busywork loops, inconsistent decisions).</li><li>Context engineering isn’t writing better prompts: it’s <strong>making the right context available, at the right moment</strong>, in a <strong>versioned</strong> way.</li><li>In VS Code, the most robust workflow fits in <strong>3 building blocks</strong>:<ol><li><strong>global instructions</strong> (<code>.github/copilot-instructions.md</code>)</li><li>a <strong>“Plan” agent</strong> (read-only tools) → produces a stable plan</li><li>an <strong>“Implementation” agent</strong> (editing + terminal) → executes the plan</li></ol><ul><li><strong>handoffs</strong> to move from one to the other without losing the thread.</li></ul></li></ul><h2 id=why-a-workflow-and-not-just-copilot>Why a “workflow” (and not just “Copilot”)?
+<a class=heading-anchor href=#why-a-workflow-and-not-just-copilot aria-label="Lien vers cette section">#</a></h2><p>You can get a decent result on a small ticket with a well-written prompt. But as soon as:</p><ul><li>the codebase grows,</li><li>architectural rules aren’t obvious,</li><li>the domain has traps,</li><li>or you want consistency over multiple days/weeks,</li></ul><p>… chat becomes a lottery. Not because the model is bad, but because <strong>you’re feeding it unstable, incomplete, and often contradictory context</strong>.</p><p>The typical outcome: it starts a “plausible” implementation, then you patch it by hand (or you start over). This workflow aims for the opposite: <strong>fewer iterations, more explicit decisions, and a trail</strong>.</p><blockquote><p>Key point: the goal isn’t to “put everything into context.” The goal is to <strong>structure</strong> it (stable references + on-demand selection) to avoid saturation and guesswork when the model lacks anchors.</p></blockquote><hr><h2 id=prerequisites-to-reproduce>Prerequisites (to reproduce)
+<a class=heading-anchor href=#prerequisites-to-reproduce aria-label="Lien vers cette section">#</a></h2><ul><li>VS Code with GitHub Copilot Chat.</li><li><strong>Custom agents are available starting with VS Code 1.106</strong> (if you don’t have them, update VS Code).[^vscode-version]<br>Quick check:<div class=codeblock><button class=codeblock__copy type=button aria-label="Copy code">Copy</button><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>code --version</span></span></code></pre></div></div></li></ul><div class=codeblock><button class=codeblock__copy type=button aria-label="Copy code">Copy</button><pre tabindex=0><code>
+* Enable instruction files for Copilot Chat:
+
+  * Setting `github.copilot.chat.codeGeneration.useInstructionFiles` (workspace or user).[^vscode-instructions]
+
+---
+
+## The target workflow (clear, simple, maintainable)
+
+### 1) “Always there” project context (global instructions)
+
+A **versioned** file that says: “here are the rules and the reference docs.”[^vscode-instructions]
+
+### 2) Read-only planning
+
+An agent that **edits nothing**. It reads, understands, and **produces a plan** (a deliverable).
+
+### 3) Implementation (“execution mode”)
+
+An agent that’s allowed to edit, run tests, and make fixes — **but follows the plan**.
+
+### + Handoffs
+
+Buttons in VS Code to go from Plan → Implementation (and optionally Implementation → Review) with a pre-filled prompt.[^vscode-agents]
+
+---
+
+## Step 1 — Get project context under control
+
+### 1.1 Create (or stabilize) 3 “pillar” docs
+
+If you only maintain three documents, start with these (even if they’re short):
+
+* `docs/ARCHITECTURE.md`
+
+  * architecture goals, modules, dependencies, invariants, conventions
+* `docs/PRODUCT.md`
+
+  * business vocabulary, personas, rules, non-goals
+* `docs/CONTRIBUTING.md`
+
+  * style, tests, CI, commit conventions, review rules
+
+This isn’t “nice to have.” It’s the workflow’s **fuel**.
+
+### 1.2 Add `.github/copilot-instructions.md`
+
+&gt; VS Code automatically applies this file to all requests in the workspace (if the option is enabled).[^vscode-instructions]
+
+Create:
+
+`/.github/copilot-instructions.md`
+
+```md
+# Copilot instructions (project)
+
+## Source of truth (read before deciding)
+- Architecture: [docs/ARCHITECTURE.md](../docs/ARCHITECTURE.md)
+- Product / domain: [docs/PRODUCT.md](../docs/PRODUCT.md)
+- Contribution: [docs/CONTRIBUTING.md](../docs/CONTRIBUTING.md)
+
+## Working rules
+- If information is missing: ask a question OR propose a hypothesis + a verification method.
+- Do not invent APIs, files, behaviors, or command outputs.
+- Prefer small, testable, reversible changes.
+- Always propose a validation step (tests, lint, command, reproduction scenario).
+```
+
+💡 Useful variant: add tech-scoped instruction files via `*.instructions.md` (e.g., `backend.instructions.md`, `frontend.instructions.md`) with `applyTo:`.[^vscode-instructions]
+
+---
+
+## Step 2 — Create a “Plan” agent (read-only)
+
+### 2.1 Recommended layout
+
+```text
+.github/
+  agents/
+    plan.agent.md
+    implementation.agent.md
+  prompts/
+    plan.prompt.md
+docs/
+  ARCHITECTURE.md
+  PRODUCT.md
+  CONTRIBUTING.md
+docs/ai/
+  plan-template.md
+```
+
+### 2.2 Define the agent: `.github/agents/plan.agent.md`
+
+Goal: produce a **actionable** and **verifiable** plan, without touching the code.
+
+```md
+---
+name: Planner
+description: &#34;Generates an implementation plan (without modifying the code).&#34;
+# Intentionally limited tools: read / search / usages.
+# Adapt to the actual tools available in your VS Code.
+tools: [&#39;search&#39;, &#39;fetch&#39;, &#39;usages&#39;]
+handoffs:
+  - label: &#34;Start implementation&#34;
+    agent: implementation
+    prompt: &#34;Implement the plan above. Make small changes, test often, and flag any deviation from the plan.&#34;
+    send: false
+---
+
+# Role
+You are in **planning mode**. You make **no** code changes.
+
+# Method
+1) Clarify the request (explicit hypotheses if needed).
+2) Read the reference docs (architecture/product/contrib).
+3) Inspect the existing code (structure, entry points, usages).
+4) Produce a Markdown plan with:
+   - Goal &amp; non-goals
+   - Hypotheses / unknowns + how to resolve them
+   - Steps (small, ordered, testable)
+   - Impacts (API, data, perf, security)
+   - Test strategy (unit/integration/contracts)
+   - Minimal rollback plan
+5) End with a “done” checklist (observable signals).
+```
+
+&gt; Important: in VS Code, custom agents are discovered via `.agent.md` files under `.github/agents`. Handoffs are declared in the frontmatter.[^vscode-agents]
+
+---
+
+## Step 3 — Create an “Implementation” agent (editing + tests)
+
+Here, you want an agent that:
+
+* follows the plan,
+* changes in small batches,
+* runs tests,
+* documents what it does.
+
+### `.github/agents/implementation.agent.md`
+
+```md
+---
+name: Implementation
+description: &#34;Implements a plan while respecting architecture and validating via tests.&#34;
+# More permissive tools (editing + execution). Adjust to your environment.
+tools: [&#39;search&#39;, &#39;usages&#39;, &#39;fetch&#39;, &#39;terminal&#39;, &#39;edit&#39;]
+handoffs:
+  - label: &#34;Quick review&#34;
+    agent: review
+    prompt: &#34;Review the changes: consistency, tests, risks, technical debt.&#34;
+    send: false
+---
+
+# Role
+You implement an existing plan. If the plan is missing or ambiguous, you stop and ask for a plan (or switch back to Planner).
+
+# Rules
+- Don’t “reinterpret” the requirement mid-flight: flag deviations from the plan.
+- Small change → test → commit (or at least a checkpoint) → next step.
+- If a command or behavior is uncertain: propose a verification, don’t invent.
+
+# Expected output
+- Code + tests
+- Validation notes (commands, observable results)
+- Decision list (and trade-offs)
+```
+
+### (Optional) Add a “Review” agent
+
+You can create a third agent (`review.agent.md`) that edits nothing and only:
+
+* reads the diff,
+* highlights risks,
+* suggests improvements,
+* lists missing validations.
+
+---
+
+## Step 4 — Prompt files: industrialize repetitive requests (optional but worth it)
+
+Prompt files let you run “routines” via `/` in the chat.[^vscode-prompt-files]
+
+### Example: `.github/prompts/plan.prompt.md`
+
+```md
+---
+name: plan
+description: &#34;Generate an implementation plan from a request.&#34;
+agent: Planner
+---
+
+Based on the following request, produce an implementation plan compliant with the project instructions.
+Request:
+${input:demande:Describe the feature / refactor}
+```
+
+Usage: in VS Code chat, type `/plan` then fill in the input.[^vscode-prompt-files]
+
+---
+
+## Concrete example (mini user story)
+
+&gt; “Add a `GET /customers/{id}` endpoint with access control and tests.”
+
+1. Select the **Planner** agent
+2. Run `/plan` (or write the request)
+3. Get a plan: entry points, structure, tests, rollback
+4. Click the handoff **“Start implementation”**
+5. The **Implementation** agent executes the plan, tests, documents
+6. (Optional) Handoff to **Review**
+
+---
+
+## Common pitfalls (and how to avoid them)
+
+### 1) Too many instructions kills the instruction
+
+If your `.github/copilot-instructions.md` is 200 lines long, it’ll be ignored or misapplied. Keep it **short**, point to docs.
+
+### 2) Outdated “pillar” docs = dangerous AI
+
+If `ARCHITECTURE.md` lies, the agent will follow a lie. Treat these files like code: review, versioning, updates.
+
+### 3) Tools too permissive during Plan
+
+Planning doesn’t need editing. Limit tools (otherwise “just one small edit” happens fast).
+
+### 4) Handoffs without guardrails
+
+A handoff with `send: true` can auto-start implementation. If you want human control, keep `send: false`.
+
+---
+
+## Exit checklist (observable signals)
+
+* [ ] `.github/copilot-instructions.md` exists and is applied (option enabled).[^vscode-instructions]
+* [ ] The **Planner** agent shows up in the agent list.[^vscode-agents]
+* [ ] The **Implementation** agent shows up in the agent list.[^vscode-agents]
+* [ ] Planner produces a structured plan (steps + tests + rollback + checklist).
+* [ ] Implementation works in small batches, runs tests, and documents.
+* [ ] `ARCHITECTURE/PRODUCT/CONTRIBUTING` docs exist and are used as references.
+
+---
+
+## Alternatives (when to choose something else)
+
+* **Solo, tiny scripts, low stakes**: stick to a “generalist” agent — but keep at least a minimal `copilot-instructions.md`.
+* **You already have a strong ADR/PRD process**: plug Planner into those docs (don’t duplicate).
+* **You don’t want to maintain agents**: VS Code offers a built-in planning agent (but you lose some standardization).
+
+## Sources
+
+[^vscode-version]: Microsoft — Visual Studio Code: versioning and troubleshooting (`Help: About` / `code --version`): [https://code.visualstudio.com/docs/supporting/faq#_how-do-i-find-the-version](https://code.visualstudio.com/docs/supporting/faq#_how-do-i-find-the-version).
+
+[^vscode-instructions]: Microsoft — GitHub Copilot Chat: custom instructions and workspace instruction files (`.github/copilot-instructions.md`, `*.instructions.md`): [https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-instructions](https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-instructions).
+
+[^vscode-agents]: Microsoft — GitHub Copilot Chat: agents and custom agents (`.github/agents/*.agent.md`, handoffs): [https://code.visualstudio.com/docs/copilot/copilot-chat#_agents](https://code.visualstudio.com/docs/copilot/copilot-chat#_agents).
+
+[^vscode-prompt-files]: Microsoft — GitHub Copilot Chat: prompt files (`.github/prompts/*.prompt.md`): [https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files](https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files).
+
+[^vscode-context-engineering]: Microsoft — &#34;Set up a context engineering flow in VS Code&#34;: [https://code.visualstudio.com/docs/copilot/copilot-chat-context#_set-up-a-context-engineering-flow-in-vs-code](https://code.visualstudio.com/docs/copilot/copilot-chat-context#_set-up-a-context-engineering-flow-in-vs-code).</code></pre></div><div class="card post-feedback"><div class=card-body><div class=post-feedback__vote><h5 class=card-subtitle><span class=vote-label>Helpful?</span></h5><div class=post-feedback__voteWidget><div data-lyket-type=updown data-lyket-namespace=herdev data-lyket-id=e395aff1ff94e7ab7428317c6349fc13></div></div></div><div class=post-feedback__issue><a class=paper-btn href="https://github.com/herveDarritchon/herdev-blog/issues/new?title=Bug%3A+VS+Code%3A+setting+up+a+context+engineering+workflow+%28instructions%2C+agents%2C+handoffs%29&amp;body=Page%3A+https%3A%2F%2Fherdev.hervedarritchon.fr%2Fen%2Fvscode-context-engineering-workflow%2F%0ALanguage%3A+en%0A%0A%23%23+Problem%0A%0A%23%23+Expected%0A%0A%23%23+Context%0A-+Browser%3A%0A-+OS%3A%0A&amp;template=bug_report.yml" target=_blank rel=noopener>Report an issue</a></div></div></div></main><footer class="site-footer border"><div class=site-footer__left><span>Powered by
+<a href=https://gohugo.io/ rel=noopener target=_blank>Hugo</a>
+and
+<a href=https://github.com/behaska/papercss-hugo-theme/blob/master/README.md target=_blank rel="noopener noreferrer">PaperCSS Theme</a>.</span></div><script src="https://unpkg.com/@lyket/widget@latest/dist/lyket.js?apiKey=pt_8df890b716eaafef7da06e7a853046"></script><div class=site-footer__right><a class=footer-license__link href=https://creativecommons.org/licenses/by-nc-nd/4.0/ rel=noopener target=_blank><img class=footer-license__img src=/img/license-cc-by-nc-nd.svg alt="CC BY-NC-ND 4.0"> <span class=footer-license__text>Content © Behaska 2025</span></a></div></footer></div></body></html>

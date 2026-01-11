@@ -1,4 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI on HerDev Blog</title><link>https://herdev.hervedarritchon.fr/categories/ai/</link><description>Recent content in AI on HerDev Blog</description><generator>Hugo</generator><language>fr-FR</language><lastBuildDate>Fri, 09 Jan 2026 23:11:01 +0000</lastBuildDate><atom:link href="https://herdev.hervedarritchon.fr/categories/ai/index.xml" rel="self" type="application/rss+xml"/><item><title>VS Code : de l'éditeur + chat… au poste de pilotage d'agents (et d'outils)</title><link>https://herdev.hervedarritchon.fr/d%C3%A9c-2025-vs-code-release-event/</link><pubDate>Mon, 15 Dec 2025 09:00:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/d%C3%A9c-2025-vs-code-release-event/</guid><description>&lt;h2 id="tldr"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ai on HerDev Blog</title><link>https://herdev.hervedarritchon.fr/categories/ai/</link><description>Recent content in Ai on HerDev Blog</description><generator>Hugo</generator><language>fr-FR</language><lastBuildDate>Sun, 11 Jan 2026 12:25:04 +0000</lastBuildDate><atom:link href="https://herdev.hervedarritchon.fr/categories/ai/index.xml" rel="self" type="application/rss+xml"/><item><title>VS Code : mettre en place un workflow d’ingénierie de contexte (instructions, agents, handoffs)</title><link>https://herdev.hervedarritchon.fr/vscode-context-engineering-workflow/</link><pubDate>Sun, 11 Jan 2026 12:00:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/vscode-context-engineering-workflow/</guid><description>&lt;h2 id="tldr"&gt;
+TL;DR
+&lt;a class="heading-anchor" href="#tldr" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Un assistant IA &lt;strong&gt;sans contexte&lt;/strong&gt; n’est pas “bête” : il est &lt;strong&gt;aveugle&lt;/strong&gt;. Et votre projet paie la facture (erreurs, tours de manège, décisions incohérentes).&lt;/li&gt;
+&lt;li&gt;L’ingénierie de contexte, ce n’est pas écrire de meilleurs prompts : c’est &lt;strong&gt;rendre le bon contexte disponible, au bon moment&lt;/strong&gt;, de façon &lt;strong&gt;versionnée&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Dans VS Code, le workflow le plus robuste tient en &lt;strong&gt;3 briques&lt;/strong&gt; :
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;instructions globales&lt;/strong&gt; (&lt;code&gt;.github/copilot-instructions.md&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;agent “Plan”&lt;/strong&gt; (outils lecture seule) → produit un plan stable&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;agent “Implementation”&lt;/strong&gt; (édition + terminal) → exécute le plan&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;des &lt;strong&gt;handoffs&lt;/strong&gt; pour passer de l’un à l’autre sans perdre le fil.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>VS Code : de l'éditeur + chat… au poste de pilotage d'agents (et d'outils)</title><link>https://herdev.hervedarritchon.fr/d%C3%A9c-2025-vs-code-release-event/</link><pubDate>Mon, 15 Dec 2025 09:00:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/d%C3%A9c-2025-vs-code-release-event/</guid><description>&lt;h2 id="tldr"&gt;
 TL;DR
 &lt;a class="heading-anchor" href="#tldr" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
 &lt;/h2&gt;

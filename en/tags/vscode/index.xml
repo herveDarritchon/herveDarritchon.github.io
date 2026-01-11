@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vscode on HerDev Blog</title><link>https://herdev.hervedarritchon.fr/en/tags/vscode/</link><description>Recent content in Vscode on HerDev Blog</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Sun, 11 Jan 2026 13:24:43 +0100</lastBuildDate><atom:link href="https://herdev.hervedarritchon.fr/en/tags/vscode/index.xml" rel="self" type="application/rss+xml"/><item><title>VS Code: setting up a context engineering workflow (instructions, agents, handoffs)</title><link>https://herdev.hervedarritchon.fr/en/vscode-context-engineering-workflow/</link><pubDate>Sun, 11 Jan 2026 12:00:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/en/vscode-context-engineering-workflow/</guid><description>&lt;h2 id="tldr"&gt;
+TL;DR
+&lt;a class="heading-anchor" href="#tldr" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;An AI assistant &lt;strong&gt;without context&lt;/strong&gt; isn’t “dumb”: it’s &lt;strong&gt;blind&lt;/strong&gt;. And your project pays the price (mistakes, busywork loops, inconsistent decisions).&lt;/li&gt;
+&lt;li&gt;Context engineering isn’t writing better prompts: it’s &lt;strong&gt;making the right context available, at the right moment&lt;/strong&gt;, in a &lt;strong&gt;versioned&lt;/strong&gt; way.&lt;/li&gt;
+&lt;li&gt;In VS Code, the most robust workflow fits in &lt;strong&gt;3 building blocks&lt;/strong&gt;:
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;global instructions&lt;/strong&gt; (&lt;code&gt;.github/copilot-instructions.md&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;a &lt;strong&gt;“Plan” agent&lt;/strong&gt; (read-only tools) → produces a stable plan&lt;/li&gt;
+&lt;li&gt;an &lt;strong&gt;“Implementation” agent&lt;/strong&gt; (editing + terminal) → executes the plan&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;handoffs&lt;/strong&gt; to move from one to the other without losing the thread.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

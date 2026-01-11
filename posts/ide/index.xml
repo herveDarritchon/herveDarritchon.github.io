@@ -15,4 +15,21 @@ Pourquoi j’en parle
 &lt;a class="heading-anchor" href="#pourquoi-jen-parle" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;La dernière release de l’année a été présentée lors d’un live “VS Code release event”, avec un message assez clair : VS Code ne veut plus être “un éditeur avec un chat”, mais &lt;strong&gt;le cockpit où tu lances, suis et combines des agents, des modèles et des outils&lt;/strong&gt;. Et oui, la release venait juste d’être livrée la veille du live.&lt;/p&gt;
-&lt;p&gt;Ce qui m’intéresse ici, ce n’est pas l’effet waouh. C’est le changement de &lt;strong&gt;workflow&lt;/strong&gt; : quand tu passes de “je demande un bout de code” à “je délègue des tâches, j’isole, je review, je merge”.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;Ce qui m’intéresse ici, ce n’est pas l’effet waouh. C’est le changement de &lt;strong&gt;workflow&lt;/strong&gt; : quand tu passes de “je demande un bout de code” à “je délègue des tâches, j’isole, je review, je merge”.&lt;/p&gt;</description></item><item><title>VS Code : mettre en place un workflow d’ingénierie de contexte (instructions, agents, handoffs)</title><link>https://herdev.hervedarritchon.fr/vscode-context-engineering-workflow/</link><pubDate>Sun, 11 Jan 2026 12:00:00 +0100</pubDate><guid>https://herdev.hervedarritchon.fr/vscode-context-engineering-workflow/</guid><description>&lt;h2 id="tldr"&gt;
+TL;DR
+&lt;a class="heading-anchor" href="#tldr" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Un assistant IA &lt;strong&gt;sans contexte&lt;/strong&gt; n’est pas “bête” : il est &lt;strong&gt;aveugle&lt;/strong&gt;. Et votre projet paie la facture (erreurs, tours de manège, décisions incohérentes).&lt;/li&gt;
+&lt;li&gt;L’ingénierie de contexte, ce n’est pas écrire de meilleurs prompts : c’est &lt;strong&gt;rendre le bon contexte disponible, au bon moment&lt;/strong&gt;, de façon &lt;strong&gt;versionnée&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Dans VS Code, le workflow le plus robuste tient en &lt;strong&gt;3 briques&lt;/strong&gt; :
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;instructions globales&lt;/strong&gt; (&lt;code&gt;.github/copilot-instructions.md&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;agent “Plan”&lt;/strong&gt; (outils lecture seule) → produit un plan stable&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;agent “Implementation”&lt;/strong&gt; (édition + terminal) → exécute le plan&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;des &lt;strong&gt;handoffs&lt;/strong&gt; pour passer de l’un à l’autre sans perdre le fil.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>
