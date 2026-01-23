@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Multiplatform on HerDev Blog</title><link>https://herdev.hervedarritchon.fr/en/tags/multiplatform/</link><description>Recent content in Multiplatform on HerDev Blog</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Fri, 23 Jan 2026 17:47:50 +0100</lastBuildDate><atom:link href="https://herdev.hervedarritchon.fr/en/tags/multiplatform/index.xml" rel="self" type="application/rss+xml"/><item><title>Kotlin 2.3: 5 genuinely useful changes (and what to enable right now)</title><link>https://herdev.hervedarritchon.fr/en/kotlin-2-3-5-nouveautes-utiles/</link><pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate><guid>https://herdev.hervedarritchon.fr/en/kotlin-2-3-5-nouveautes-utiles/</guid><description>&lt;p&gt;Kotlin 2.3.0 is a &lt;strong&gt;maturity&lt;/strong&gt; release: fewer flashy features, more guardrails, better DX, and real performance work. It won’t “change how you code” by itself — but it &lt;em&gt;will&lt;/em&gt; prevent entire classes of bugs and trim boilerplate if you flip the right switches.&lt;/p&gt;
+&lt;h2 id="tldr"&gt;
+TL;DR
+&lt;a class="heading-anchor" href="#tldr" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Catch ignored return values&lt;/strong&gt; (opt-in) → fewer silent logic bugs.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Explicit backing fields&lt;/strong&gt; (experimental) → goodbye &lt;code&gt;_state&lt;/code&gt; / &lt;code&gt;state&lt;/code&gt;, plus smart-cast on &lt;code&gt;field&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;UUID v7 + parseOrNull&lt;/strong&gt; (experimental UUID API) → time-sortable IDs, parsing without exceptions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Kotlin/Native + Swift export&lt;/strong&gt; → more idiomatic Swift enums and &lt;code&gt;vararg&lt;/code&gt;, plus release builds up to &lt;strong&gt;~40%&lt;/strong&gt; faster.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Kotlin/Wasm&lt;/strong&gt; → binaries up to &lt;strong&gt;~13%&lt;/strong&gt; smaller + &lt;code&gt;KClass.qualifiedName&lt;/code&gt; enabled by default thanks to compact Latin-1 string storage.&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

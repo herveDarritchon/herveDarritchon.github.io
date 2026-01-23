@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tooling on HerDev Blog</title><link>https://herdev.hervedarritchon.fr/tags/tooling/</link><description>Recent content in Tooling on HerDev Blog</description><generator>Hugo</generator><language>fr-FR</language><lastBuildDate>Fri, 23 Jan 2026 17:47:50 +0100</lastBuildDate><atom:link href="https://herdev.hervedarritchon.fr/tags/tooling/index.xml" rel="self" type="application/rss+xml"/><item><title>Kotlin 2.3 : 5 nouveautés vraiment utiles (et quoi activer tout de suite)</title><link>https://herdev.hervedarritchon.fr/kotlin-2-3-5-nouveautes-utiles/</link><pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate><guid>https://herdev.hervedarritchon.fr/kotlin-2-3-5-nouveautes-utiles/</guid><description>&lt;p&gt;Kotlin 2.3.0 est une release de &lt;strong&gt;maturité&lt;/strong&gt; : moins de “features tape-à-l’œil”, plus de garde-fous, de DX et de perf. Elle ne “change pas votre façon de coder” &lt;em&gt;par magie&lt;/em&gt; — mais elle vous évite des classes entières de bugs et réduit du boilerplate si vous activez les bons interrupteurs. :contentReference[oaicite:0]{index=0}&lt;/p&gt;
+&lt;h2 id="tldr"&gt;
+TL;DR
+&lt;a class="heading-anchor" href="#tldr" aria-label="Lien vers cette section"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Détecter les valeurs de retour ignorées&lt;/strong&gt; (opt-in) → moins de bugs silencieux. :contentReference[oaicite:1]{index=1}&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Explicit backing fields&lt;/strong&gt; (expérimental) → fin du duo &lt;code&gt;_state&lt;/code&gt; / &lt;code&gt;state&lt;/code&gt; et smart-cast sur &lt;code&gt;field&lt;/code&gt;. :contentReference[oaicite:2]{index=2}&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;UUID v7 + parseOrNull&lt;/strong&gt; (API UUID expérimentale) → IDs triables temporellement, parsing sans exceptions. :contentReference[oaicite:3]{index=3}&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Kotlin/Native + Swift export&lt;/strong&gt; → enums et &lt;code&gt;vararg&lt;/code&gt; plus naturels côté Swift + builds release jusqu’à &lt;strong&gt;~40%&lt;/strong&gt; plus rapides. :contentReference[oaicite:4]{index=4}&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Kotlin/Wasm&lt;/strong&gt; → binaires jusqu’à &lt;strong&gt;~13%&lt;/strong&gt; plus légers + &lt;code&gt;KClass.qualifiedName&lt;/code&gt; activé par défaut, grâce au stockage compact Latin-1. :contentReference[oaicite:5]{index=5}&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>
